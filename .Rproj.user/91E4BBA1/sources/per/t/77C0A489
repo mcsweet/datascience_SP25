@@ -1,0 +1,32 @@
+{
+    "id": "77C0A489",
+    "path": "~/GitHub/datascience_SP25/data-science-curriculum-build/exercises_sequenced/z - d05-e-vis00-basics-assignment.Rmd",
+    "project_path": "data-science-curriculum-build/exercises_sequenced/z - d05-e-vis00-basics-assignment.Rmd",
+    "type": "r_markdown",
+    "hash": "4256464468",
+    "contents": "",
+    "dirty": false,
+    "created": 1737941550462.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "rmdVisualMode": "true",
+        "rmdVisualCollapsedChunks": "927",
+        "rmdVisualModeLocation": "2204:2163.199951171875",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "0",
+        "cursorPosition": "81,0",
+        "scrollLine": "0",
+        "last_setup_crc32": "7ed4281292a54e7d"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1737942349,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1737942349,
+    "read_only": false,
+    "read_only_alternatives": []
+}

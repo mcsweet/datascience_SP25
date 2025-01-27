@@ -1,6 +1,0 @@
-"0","iris %>%"
-"0","  as_tibble() %>%"
-"0","  filter(Species == ""setosa"""
-"0","    # TODO: Filter on Species ""setosa"""
-"0","    "
-"0","  )"
