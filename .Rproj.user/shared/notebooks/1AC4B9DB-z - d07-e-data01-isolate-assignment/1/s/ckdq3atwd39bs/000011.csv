@@ -1,0 +1,4 @@
+"0","## flights %>% filter(dest = LAX) # Uncomment and run to see error"
+"0",""
+"0","flights %>% "
+"0","  filter(dest == ""LAX"")"
