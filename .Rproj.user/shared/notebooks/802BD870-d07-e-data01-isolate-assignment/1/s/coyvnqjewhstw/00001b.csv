@@ -1,6 +1,0 @@
-"0","## df_q6 <- TODO: Your code here!"
-"0","df_q6 <-"
-"0","  flights %>% "
-"0","  select(air_time, dest, everything()) %>% "
-"0","  arrange(desc(air_time))"
-"0","df_q6"

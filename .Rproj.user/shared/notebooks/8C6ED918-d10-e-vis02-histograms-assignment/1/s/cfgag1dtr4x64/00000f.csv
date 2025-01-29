@@ -1,0 +1,4 @@
+"0","## NOTE: No need to modify"
+"0","mpg %>%"
+"0","  ggplot(aes(cty, color = class)) +"
+"0","  geom_freqpoly(bins = 10)"

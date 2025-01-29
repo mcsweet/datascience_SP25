@@ -1,0 +1,4 @@
+"0","mpg %>%"
+"0","  ggplot(aes(cty)) +"
+"0","  geom_density() +"
+"0","  facet_wrap(~class, scales = ""free_y"")"

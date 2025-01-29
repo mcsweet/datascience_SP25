@@ -1,3 +1,0 @@
-"0","diamonds %>%"
-"0","  ggplot(aes(cut, carat)) +"
-"0","  geom_boxplot()"

@@ -1,3 +1,0 @@
-"0","## df_q1 <- TODO: Your code goes here!"
-"0","df_q1 <- flights %>% select(ends_with(""_time""))"
-"0","df_q1"

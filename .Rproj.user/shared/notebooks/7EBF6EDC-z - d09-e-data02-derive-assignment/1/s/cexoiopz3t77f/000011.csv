@@ -1,0 +1,5 @@
+"0","df_q2 <-   #calling this data frame"
+"0","  diamonds %>%   #use this information"
+"0","  summarise(n_ideal = sum(cut == ""Ideal"")) "
+"0","    # and find the number of rows that have ideal cuts"
+"0","df_q2  #call the variable to print it"

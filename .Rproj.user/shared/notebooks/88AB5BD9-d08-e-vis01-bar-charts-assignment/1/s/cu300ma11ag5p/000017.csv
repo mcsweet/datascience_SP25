@@ -1,0 +1,6 @@
+"0","mpg %>%"
+"0","  #ggplot(aes(trans)) +"
+"0","  #geom_bar()"
+"0","  count(trans) %>% "
+"0","  ggplot(aes(x = trans, y = n)) + "
+"0","    geom_col()"
