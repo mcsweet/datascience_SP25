@@ -1,7 +1,7 @@
 Getting Started: Diamonds
 ================
 Maya McKone-Sweet
-2025-01-27
+2025-02-03
 
 - [Grading Rubric](#grading-rubric)
   - [Individual](#individual)
@@ -98,8 +98,9 @@ document your observations.
 ``` r
 ## TASK: Plot `price` vs `carat` below
 ## Your code here!
-ggplot(diamonds) +
-   geom_point(aes(x = carat, y = price))
+diamonds  %>% 
+  ggplot(aes(x = carat, y = price)) +
+  geom_point()
 ```
 
 ![](c00-diamonds-assignment_files/figure-gfm/q1-task-1.png)<!-- -->
@@ -120,15 +121,17 @@ ggplot(diamonds) +
 ``` r
 ## TASK: Plot `price`, `carat`, and `cut` below
 ## Your code here!
-ggplot(diamonds) +
-   geom_point(aes(x = cut, y = price, color = carat))
+diamonds  %>% 
+  ggplot(aes(x = cut, y = price, color = carat)) +
+  geom_point()
 ```
 
 ![](c00-diamonds-assignment_files/figure-gfm/q2-task-1.png)<!-- -->
 
 ``` r
-ggplot(diamonds) +
-   geom_point(aes(x = carat, y = price, color = cut))
+diamonds  %>% 
+  ggplot(aes(x = carat, y = price, color = cut)) +
+  geom_point()
 ```
 
 ![](c00-diamonds-assignment_files/figure-gfm/q2-task-2.png)<!-- -->
@@ -141,12 +144,20 @@ ggplot(diamonds) +
 - Cut influences the price and explains why price and carat are not
   directly proportional.
 - When I put cut on the x-axis and price on the y-axis I see a gradual
-  color gradinet from low price to high price based on the carat of the
-  diamond. For one cut type as the price increases so does the carat.
-  For a fair cut the carats start increasing earlier then when compared
-  to the ideal cut where the highest carat is only about three.
-- When we change the graph to have price on the x-axis and carat on the
-  y-axis
+  color gradient from low price to high price based on the carat of the
+  diamond. For one cut type as the price increases the carat also tends
+  to increase. For a fair cut the carats start increasing earlier then
+  when compared to the ideal cut where the highest carat is only about
+  three.
+- When we change the graph to have price on the y-axis and carat on the
+  x-axis there is a more complex relationship at play. It was color
+  coded by cut type as well. It is not easy to draw conclusion about how
+  cut affects the price. It tends to show that nicer cuts relate to
+  higher prices but it is not definitive. It does show a general upward
+  trend that as carat increases so does price. It is not a linear
+  relationship but look to be somewhat corelated. I would have to look
+  more into how the other variables affect price to know how much carat
+  has to do with the price.
 
 # Communication
 
