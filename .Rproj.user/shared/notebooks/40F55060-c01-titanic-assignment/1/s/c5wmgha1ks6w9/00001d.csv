@@ -1,0 +1,4 @@
+"0","  df_prop %>% "
+"0","  filter(Survived == 'Yes') %>% "
+"0","  ggplot(aes(Class, Prop, fill = Sex)) +"
+"0","  geom_col()"

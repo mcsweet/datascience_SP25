@@ -1,0 +1,5 @@
+"0","df_prop %>% "
+"0","  filter(Survived == 'Yes') %>% "
+"0","  ggplot(aes(Class, Prop, fill = Age)) +"
+"0","  geom_col() +"
+"0","  facet_grid(rows = 'Sex')"
