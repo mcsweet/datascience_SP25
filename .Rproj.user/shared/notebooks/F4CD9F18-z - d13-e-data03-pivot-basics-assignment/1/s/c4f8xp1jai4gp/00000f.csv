@@ -1,0 +1,8 @@
+"0","## NOTE: No need to edit; this is setup for the exercises"
+"0","df_base <-"
+"0","  tribble("
+"0","    ~`X-0`, ~`X-1`, ~key,"
+"0","         1,      9,  ""A"","
+"0","         2,      8,  ""B"","
+"0","         3,      7,  ""C"""
+"0","  )"

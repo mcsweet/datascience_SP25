@@ -239,7 +239,7 @@ df_prop
 df_prop %>% 
   filter(Survived == 'Yes') %>% 
   ggplot(aes(Class, Prop, fill = Sex)) +
-  geom_col()
+  geom_col(position = "dodge")
 ```
 
     ## Warning: Removed 2 rows containing missing values or values outside the scale range
@@ -253,9 +253,9 @@ df_prop %>%
   survived
 - Write your observations here.
   - Women had higher survival capabilities than men across all fronts.
-  - Even tho the probability goes about 2… it looks like a majority of
-    females survived in 1st and 2nd class. 3rd class and Crew females
-    had lower survival rates. Even tho we know that crew had the most
+  - Even though the probability goes about 2… it looks like a majority
+    of females survived in 1st and 2nd class. 3rd class and Crew females
+    had lower survival rates. Even though we know that crew had the most
     people survive of all the groups, they have the lowest proportion of
     survival.
   - 3rd class in comparison to 1st and 2nd class had a lower percent of
@@ -281,7 +281,7 @@ additional variables!
 df_prop %>% 
   filter(Survived == 'Yes') %>% 
   ggplot(aes(Class, Prop, fill = Age)) +
-  geom_col() +
+  geom_col(position = "dodge") +
   facet_grid(rows = 'Sex')
 ```
 

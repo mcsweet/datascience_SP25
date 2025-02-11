@@ -1,0 +1,7 @@
+"0","n_diamonds <- 400"
+"0",""
+"0","diamonds %>%"
+"0","  filter(cut == ""Good"") %>%"
+"0","  slice_sample(n = n_diamonds) %>%"
+"0","  ggplot(aes(carat)) +"
+"0","  geom_histogram()"

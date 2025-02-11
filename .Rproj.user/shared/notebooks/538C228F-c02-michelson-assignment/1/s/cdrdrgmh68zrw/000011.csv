@@ -1,0 +1,8 @@
+"0","## TODO: Compare Michelson's estimate and error against the true value"
+"0","## Your code here!"
+"0",""
+"0","tibble("
+"0","  LowerBound = LIGHTSPEED_MICHELSON - LIGHTSPEED_PM,"
+"0","  UpperBound = LIGHTSPEED_MICHELSON + LIGHTSPEED_PM,"
+"0","  vacuum = LIGHTSPEED_VACUUM"
+"0",")"

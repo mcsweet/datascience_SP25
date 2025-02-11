@@ -1,0 +1,5 @@
+"0","## TODO: Complete this code"
+"0","df_q1 <-"
+"0","  tibble(x = seq(-1, +1, length.out = 100)) %>%"
+"0","  mutate(d = dnorm(x, mean = 0, sd = 1))"
+"0","  "

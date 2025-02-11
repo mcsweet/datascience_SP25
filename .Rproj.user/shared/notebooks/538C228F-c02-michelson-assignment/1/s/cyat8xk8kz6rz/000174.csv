@@ -1,0 +1,5 @@
+"0",""
+"0","df_q2 %>% "
+"0","  ggplot(aes(x =Temp, y = Distinctness, color = VelocityVacuum)) +"
+"0","  geom_jitter(width = 0, ) + "
+"0","  scale_color_viridis_b()"

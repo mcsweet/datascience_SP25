@@ -1,0 +1,12 @@
+"0","## NOTE: No need to edit; this is setup for the exercise"
+"0","df_q6 <-"
+"0","  df_base %>%"
+"0","## NOTE: Add your pivot here!"
+"0","   pivot_longer("
+"0","    names_to = Sep,"
+"0","    values"
+"0","    cols = c(""x-O"",""X-1"")"
+"2","Error: unexpected symbol in:
+""    values
+    cols""
+"

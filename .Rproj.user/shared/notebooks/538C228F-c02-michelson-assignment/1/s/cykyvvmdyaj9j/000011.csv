@@ -1,0 +1,4 @@
+"0","#plot frequency vs day of week"
+"0","df_q5 %>%"
+"0","  ggplot(aes(VelocityVacuum, color = Day)) +"
+"0","  geom_freqpoly(bins = 15)"

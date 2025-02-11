@@ -1,0 +1,4 @@
+"0",""
+"0","df_q2 %>% "
+"0","  ggplot(aes(x =Temp, y = VelocityVacuum, color = Distinctness)) +"
+"0","  geom_point()"

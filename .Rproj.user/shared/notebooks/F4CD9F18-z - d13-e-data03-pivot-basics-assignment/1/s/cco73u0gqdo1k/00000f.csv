@@ -1,0 +1,12 @@
+"0","## NOTE: No need to edit; execute"
+"0","cases %>%"
+"0","  pivot_longer("
+"0","    names_to = ""Year"","
+"0","    values_to = ""n"","
+"0","    c(`2011`, `2012`, `2013`)"
+"0",""
+"0","  ) %>%"
+"0","  mutate(Year = as.integer(Year))"
+"2","Error in cases %>% pivot_longer(names_to = ""Year"", values_to = ""n"", c(`2011`,  : 
+  could not find function ""%>%""
+"

@@ -1,0 +1,6 @@
+"0",""
+"0","df_prop %>% "
+"0","  filter(Survived == 'Yes') %>% "
+"0","  ggplot(aes(Class, Prop, fill = Sex)) +"
+"0","  geom_col(postion = ""dodge"")"
+"2","Warning: [38;5;232mIgnoring unknown parameters: `postion`[39m"

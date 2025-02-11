@@ -1,0 +1,8 @@
+"0","## TODO: Adjust the data, assign to df_q2"
+"0","df_q2 <- df_michelson %>% "
+"0","  mutate("
+"0","  VelocityVacuum = Velocity + 92"
+"0","  ) "
+"0","df_q2 %>% "
+"0","  arrange(desc(Distinctness)) %>%"
+"0","  knitr::kable()"

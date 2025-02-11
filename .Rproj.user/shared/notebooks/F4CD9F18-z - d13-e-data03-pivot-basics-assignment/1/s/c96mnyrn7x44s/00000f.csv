@@ -1,0 +1,7 @@
+"0","## NOTE: No need to edit; execute"
+"0","cases %>%"
+"0","  pivot_longer("
+"0","    names_to = ""Year"","
+"0","    values_to = ""n"","
+"0","    cols = c(`2011`, `2012`, `2013`)"
+"0","  )"

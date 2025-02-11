@@ -1,0 +1,4 @@
+"0",""
+"0","df_q2 %>% "
+"0","  ggplot(aes(x =Temp, fill = Distinctness)) +"
+"0","  geom_histogram(position = ""dodge"") "

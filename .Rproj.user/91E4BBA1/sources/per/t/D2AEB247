@@ -1,0 +1,32 @@
+{
+    "id": "D2AEB247",
+    "path": "~/GitHub/datascience_SP25/data-science-curriculum-build/exercises_sequenced/z - d10-e-vis02-histograms-assignment.Rmd",
+    "project_path": "data-science-curriculum-build/exercises_sequenced/z - d10-e-vis02-histograms-assignment.Rmd",
+    "type": "r_markdown",
+    "hash": "1921978122",
+    "contents": "",
+    "dirty": false,
+    "created": 1739224827049.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "cursorPosition": "35,0",
+        "scrollLine": "0",
+        "rmdVisualModeLocation": "2:0",
+        "rmdVisualCollapsedChunks": "",
+        "last_setup_crc32": ""
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1738191056,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1739283587764,
+    "read_only": false,
+    "read_only_alternatives": []
+}

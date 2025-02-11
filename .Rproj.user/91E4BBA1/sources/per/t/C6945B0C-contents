@@ -1,0 +1,122 @@
+---
+title: "Vis: Bar Charts"
+author: Zach del Rosario
+date: 2020-05-13
+output: github_document
+time: 30
+reading: 30
+---
+
+# Vis: Bar Charts
+
+*Purpose*: *Bar charts* are a key tool for EDA. In this exercise, we'll learn how to construct a variety of different bar charts, as well as when---and when *not*---to use various charts.
+
+*Reading*: [Bar Charts](https://rstudio.cloud/learn/primers/3.2) *Topics*: (All topics) *Reading Time*: \~30 minutes
+
+```{r setup, include=FALSE}
+# knitr options
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r library}
+library(tidyverse)
+
+```
+
+### **q1** In the reading, you learned the relation between `geom_bar()` and `geom_col()`. Use that knowledge to convert the following `geom_bar()` plot into the same visual using `geom_col()`.
+
+```{r q1-task}
+mpg %>%
+  #ggplot(aes(trans)) +
+  #geom_bar()
+  count(trans) %>% 
+  ggplot(aes(x = trans, y = n)) + 
+    geom_col()
+```
+
+The reading mentioned that when using `geom_col()` our x-y data should be `1-to-1`. This next exercise will probe what happens when our data are not `1-to-1`, and yet we use a `geom_col()`. Note that a [one-to-one](https://en.wikipedia.org/wiki/Injective_function) function is one where each input leads to a single output. For the `mpg` dataset, we can see that the pairs `cty, hwy` clearly don't have this one-to-one property:
+
+```{r mpg-not-1-to-1}
+## NOTE: Run this chunk for an illustration
+mpg %>% filter(cty == 20)
+```
+
+### **q2** The following code attempts to visualize `cty, hwy` from `mpg` using `geom_col()`. There's something fishy about the `hwy` values; what's wrong here?
+
+*Hint*: Try changing the `position` parameter for `geom_col()`.
+
+```{r q2-task}
+mpg %>%
+  ggplot(aes(x = cty, y = hwy)) +
+  geom_col(position = 'dodge')
+```
+
+**Observations**: The automatic postion value adds together all the x values at a point. So if there was cty =10, hwy = 20 and cty = 10, hwy = 25 the graph would say that for cty = 10 the hwy = 45. By changing the position to dodge it does not sum values it takes the average of the hwy values for a cty number. This gives us the real values.
+
+A more standard way to visualize this kind of data is a *scatterplot*, which we'll study later. For now, here's an example of a more effective way to visualize `cty` vs `hwy`:
+
+```{r q2-compare}
+## NOTE: Run this chunk for an illustration
+mpg %>%
+  ggplot(aes(cty, hwy)) +
+  geom_point()
+```
+
+### **q3** The following are two different visualizations of the `mpg` dataset.
+
+Document your observations between the `v1` and `v2` visuals. Then, determine which---`v1` or `v2`---enabled you to make more observations. What was the difference between the two visuals?
+
+```{r q4-v1}
+## TODO: Run this code without changing, describe your observations on the data
+mpg %>%
+  ggplot(aes(class, fill = class)) +
+  geom_bar()
+```
+
+**Observations**: There does not need to be a color legend. I see that there are different types of vehicles and there is a different number of each of them in a given population. There are few two seaters and minivans. There is a large population of suv's. Other observations are explicitly stated in the graph.
+
+```{r q4-v2}
+## TODO: Run this code without changing, describe your observations on the data
+mpg %>%
+  ggplot(aes(class, fill = drv)) +
+  geom_bar()
+```
+
+**Observations**: - There are 7 classes of vehicles and each have their own count in this given population. There are not many two seaters or minivans. Suv's are the most popular of the vehicle types. All pick ups are 4 wheel drive, all minivans are front wheel drive, and all two seaters are rear wheel drive. SUV's, compact, and midsize cars all have a combination of drive types. A majority of midsize cars are front wheel driving while a majority of SUV's are majority 4 wheel drive with a minority of rear wheel drive. There are significantly less read wheel drive cars then there are front wheel or four wheel.
+
+**Compare `v1` and `v2`**:
+
+-   Which visualization---`v1` or `v2`---enabled you to make more observations?
+    -   I could make way more observations with v2
+-   What was the difference between `v1` and `v2`?
+    -   v1 only presented two variables of data and showed one variable twice. v2 showed three different variables in a concise manor where nothing was repeated.
+
+### **q4** The following code has a bug; it does not do what its author intended. Identify and fix the bug. What does the resulting graph tell you about the relation between `manufacturer` and `class` of cars in this dataset?
+
+*Note*: I use a `theme()` call to rotate the x-axis labels. We'll learn how to do this in a future exercise.
+
+```{r q4-task}
+mpg %>%
+  ggplot(aes(x = manufacturer, fill = class)) +
+  geom_bar(position = "dodge") +
+  theme(axis.text.x = element_text(angle = 270, vjust = 0.5, hjust = 0))
+```
+
+**Observations** - Some manufactuers only make one class of vehicles while others make a varity. Only one manufactur makes 4 classes (toyota), 6 make 3 classes, 2 make 2 classes, and 5 makes 1 class. Dodge makes the most vehicles and has the highest count of any manufactuer for count of pickups. Audi makes only a few midsize and a bunch of compacts. 10 manufactuers makes suvs, 5 makes subcompact, 3 make pick ups, doge makes all of the mini vans, 7 make midsize cars, 5 makes compact, and only one makes a 2 seater.
+
+### **q5** The following graph is hard to read. What other form of faceting would make the visual more convenient to read? Modify the code below with your suggested improvement.
+
+```{r q5-task}
+mpg %>%
+  ggplot(aes(x = cyl)) +
+  geom_bar() +
+  facet_wrap(~ manufacturer)
+```
+
+<!-- include-exit-ticket -->
+
+# Exit Ticket
+
+<!-- -------------------------------------------------- -->
+
+Once you have completed this exercise, make sure to fill out the **exit ticket survey**, [linked here](https://docs.google.com/forms/d/e/1FAIpQLSeuq2LFIwWcm05e8-JU84A3irdEL7JkXhMq5Xtoalib36LFHw/viewform?usp=pp_url&entry.693978880=e-vis01-bar-charts-assignment.Rmd).
