@@ -3,6 +3,7 @@
 "0","  mutate("
 "0","  VelocityVacuum = Velocity + 92"
 "0","  ) "
+"0",""
 "0","df_q2 %>% "
 "0","  arrange(desc(Distinctness)) %>%"
 "0","  knitr::kable()"

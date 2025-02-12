@@ -35,7 +35,7 @@ define how you will be graded, both on an individual and team basis.
 <!-- ------------------------- -->
 
 | Category | Needs Improvement | Satisfactory |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Effort | Some task **q**'s left unattempted | All task **q**'s attempted |
 | Observed | Did not document observations, or observations incorrect | Documented correct observations based on analysis |
 | Supported | Some observations not clearly supported by analysis | All observations clearly supported by analysis (table, graph, etc.) |
@@ -124,9 +124,19 @@ df_q1 %>%
   knitr::kable()
 ```
 
-**Observations**: - Write your observations here! - (Your response
-here) - Why might your table differ from Michelson's? - (Your response
-here)
+**Observations**:
+
+-   Write your observations here!
+
+    -   The data in the first two columns are identical to the given
+        table. The Mean Velocity Values are off by a few numbers.
+
+-   Why might your table differ from Michelson's?
+
+    -   It could be taking different amount into their calculation of
+        the mean data. Potentially when transferring the data we forgot
+        a few lines. I assume it is due to different ways of calculating
+        mean or difference in the data we are analysing
 
 The `Velocity` values in the dataset are the speed of light *in air*;
 Michelson introduced a couple of adjustments to estimate the speed of
@@ -178,9 +188,11 @@ human judgment.[2]
 ## Your code here!
 
 tibble(
+  Michelson_LIGHTSPEED = LIGHTSPEED_MICHELSON,
   LowerBound = LIGHTSPEED_MICHELSON - LIGHTSPEED_PM,
   UpperBound = LIGHTSPEED_MICHELSON + LIGHTSPEED_PM,
-  vacuum = LIGHTSPEED_VACUUM
+  Vacuum_LIGHTSPEED = LIGHTSPEED_VACUUM,
+  Error = LIGHTSPEED_VACUUM - LIGHTSPEED_MICHELSON
 )
 
 
@@ -189,10 +201,23 @@ tibble(
 # print(LIGHTSPEED_VACUUM)
 ```
 
-**Observations**: - Is Michelson's estimate of the error (his
-uncertainty) greater or less than the true error? - (Your response
-here) - Make a quantitative comparison between Michelson's uncertainty
-and his error. - (Your response here)
+**Observations**:
+
+-   Is Michelson's estimate of the error (his uncertainty) greater or
+    less than the true error?
+
+    -   Michelson's uncertainty is greater than the true error. His
+        speed and the lower/upper bound do not include the actual vacuum
+        light speed. There is an Error of -151.54.
+
+-   Make a quantitative comparison between Michelson's uncertainty and
+    his error.
+
+    -   Michelson's data is uncertain as in all of its measurements has
+        a +- 51 value range from the average. In addition to this none
+        of the data measurements are in the bounds of the Vacuum Light
+        Speed. This means the measured and the actual light speed do not
+        overlap in value and the data is not accurate.
 
 The following plot shows all of Michelson's data as a [control
 chart](https://en.wikipedia.org/wiki/Control_chart); this sort of plot
@@ -264,62 +289,113 @@ df_q2 %>%
   )
 ```
 
-**Observations**: Similarities - (your responses here) Differences -
-(your responses here)
+**Observations**:
+
+-   Similarities
+
+    -   Both graphs have large portions of the trend line between the
+        upper and lower bound of the data.
+
+    -   Large spread of data points on any given day on either side of
+        the average data line
+
+-   Differences
+
+    -   The peaks outside of the upper and lower bounds are on different
+        dates.
+
+    -   The actual points of data are different and the simulated looks
+        like it has more variation
 
 ### **q5** You have access to a few other variables. Construct a **at least three** visualizations of `VelocityVacuum` against these other factors. Are there other patterns in the data that might help explain the difference between Michelson's estimate and `LIGHTSPEED_VACUUM`?
-
--   Density
 
 ```{r q5-my-visuals}
 df_q2 %>%
   ggplot(aes(VelocityVacuum, color = Distinctness)) +
-  geom_density()
+  geom_density() +
+  labs(title = "Density of Measured Velocity Values Per Distinctness", x = "Velocity of Light", y = "Density")
 
 df_q2 %>% 
-  ggplot(aes(x =Temp, y = VelocityVacuum, color = Distinctness)) +
-  geom_smooth()
-
-df_q2 %>% 
-  ggplot(aes(x =Temp, fill = Distinctness)) +
-  geom_histogram(position = "dodge") 
-
-df_q2 %>% 
-  ggplot(aes(x =Temp, y = VelocityVacuum, color = Distinctness)) +
-  geom_point()
-
-df_q2 %>% 
-  ggplot(aes(x =Temp, y = Distinctness, color = VelocityVacuum)) +
-  geom_jitter(width = 0, ) + 
-  scale_color_viridis_b()
+  ggplot(aes( x = Temp, y =VelocityVacuum)) +
+  geom_smooth() +
+  labs(title = "Trends of Velocity in Vacuum vs. Temperature", x = "Temperature", y = "Velocity of Light")
   
 ```
 
-```{r}
+**Observations Part 1**:
+
+-   Graph 1: Distinctness 3 is the highest quality data measurement. Yet
+    its density is spread out rather than peaking towards one velocity.
+    Distinctness 1 and 2 which are lower quality data measurements have
+    distinct peaks where there is a clear trend along the data. This is
+    the opposite of what I assumed would be true. I assumed the higher
+    quality data would have less variation than the lower quality
+    measurements. I could look into this as it could explain the
+    difference between VelocityVacuum and Michelson's data.
+
+-   Graph 2: Originally I made a smooth line graph of each distinctness.
+    I ended up combining them into one trend line because there was too
+    much variation in the data to make any accurate observations. This
+    graph shows me that on the low range of data and high range (\<65
+    and \>85) there is a more exponential relationship between
+    temperature and the measured velocity in the vacuum. This suggests
+    that temperature could affect the velocity measurements which
+    potentially could be due to experimental set-up or error in
+    measurement equipment. Temperature does not affect the actual speed
+    of light from my knowledge. From 65-85 degrees the velocity is tends
+    to be consistent (in +- 15 from an average of about 299940). There
+    is potential error in this smooth line graph as seen by the shaded
+    regions and thus more analysis could be done.
+
+```{r q5-day-of-week}
 df_q5 <- 
   df_q2 %>%
   mutate(
     Day = wday(Date, label = TRUE)
   )
-#plot qty and Distinctness vs day of week
-df_q5 %>%
-  ggplot(aes(Day, fill = Distinctness)) +
-  geom_bar()
-#plot frequency vs day of week
-df_q5 %>%
-  ggplot(aes(VelocityVacuum, color = Day)) +
-  geom_freqpoly(bins = 15)
 
 #plot density vs day of week
 df_q5 %>%
   ggplot(aes(VelocityVacuum, color = Day)) +
-  geom_density(bins = 15)
+  geom_density() +
+  labs(title = "Density of Measured Velocity Vs. Day of The Week", x = "Velocity of Light", y = "Density")
 
+df_q5 %>%
+  ggplot(aes(x = Day, y = VelocityVacuum, fill = Day)) +
+  geom_boxplot() +
+  geom_hline(
+    yintercept = LIGHTSPEED_VACUUM,
+    linetype = "dotted"
+  ) +
+  labs(title = "Day of Week vs. Measured Velocity of Light Compared to Real Velocity of Light", x = "Day of The Week", y = "Velocity of Light")
 ```
 
-**Observations**:
+**Observations Part 2**:
 
--   Make sure to record observations on your graphs!
+-   Graph 3: The trend density of velocity of the light is given for
+    each day. Monday has the highest peak density yet has another bump.
+    Wednesday is the most spread out over all the days meaning it tends
+    to have the most variation in its data. Saturday, Thursday, and
+    Tuesday follow similar trends with one peak at a velocity of
+    roughly 299925. This shows that on those days they had the most
+    similar data results. The data variation could potentially be due to
+    different scientist taking the data on different days as most likely
+    multiple people took data points. To understand the data trends per
+    day we need to look at graph 4.
+-   Graph 4: As stated in graph 3, Wednesday has the most variation as
+    seen in its box plot. Monday and Thursday do not average around the
+    same velocity but they have the least amount of variation. All box
+    plots but Monday tend to have a mean data line around the same
+    range. Monday has distinct separation from the other days. Thursday
+    and Saturday have outlier data that is not take into account in the
+    box plot and I wonder if that is due to instrumentation error and
+    human error. The dotted line is the actual velocity of light. The
+    only box + whisker plot that overlaps at all is Wednesday which is
+    the day with the most variation. It shows that no matter the day all
+    data tends to measure above the actual velocity of light. Day of the
+    week could have a slight influence over the variation in data but
+    does not explain why the data was so far from the actual velocity of
+    light.
 
 ## Bibliography
 
