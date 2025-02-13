@@ -43,7 +43,7 @@ software and reports.
 | Title             | Person     |
 |-------------------|------------|
 | *Forking* Partner | **Oliver** |
-| *Merging* Partner | **TODO**   |
+| *Merging* Partner | Maya       |
 
 *Note*: All instructions below are coded for either the *Forking*
 partner, the *Merging* partner, or *Both*. Note that you will both do
