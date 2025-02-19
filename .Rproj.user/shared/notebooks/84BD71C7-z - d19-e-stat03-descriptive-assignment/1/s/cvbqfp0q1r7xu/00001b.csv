@@ -1,0 +1,8 @@
+"0","slope <- 0.5 # Play with this value; observe the correlation"
+"0","df_line <-"
+"0","  tibble(x = seq(-1, +1, length.out = 50)) %>%"
+"0","  mutate(y = slope * x)"
+"0",""
+"0","## TASK: Compute the Pearson correlation"
+"0","df_line %>%"
+"0","  summarize(rho = cor(x, y))"

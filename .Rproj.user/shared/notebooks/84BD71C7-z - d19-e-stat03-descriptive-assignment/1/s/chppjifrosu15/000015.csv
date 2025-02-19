@@ -1,0 +1,6 @@
+"0","## NOTE: No need to change this!"
+"0","set.seed(101)"
+"0","v_test_iqr <- rnorm(n = 10)"
+"0",""
+"0","## TASK: Compute the interquartile range"
+"0","test_iqr <- quantile(v_test_iqr, probs = 0.75) - quantile(v_test_iqr, probs = 0.25)"

@@ -1,0 +1,4 @@
+"0","economics %>%"
+"0","  filter(date > lubridate::ymd(""2010-01-01"")) %>%"
+"0","  ggplot(aes(date, pop)) +"
+"0","  geom_point()"

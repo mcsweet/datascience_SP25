@@ -1,0 +1,29 @@
+"0","## NOTE: No need to change this!"
+"0","flights %>%"
+"0","  summarize(across(where(is.numeric), ~sum(is.na(.)))) %>%"
+"0","  glimpse"
+"1","Rows: 1"
+"1",""
+"1","
+"
+"1","Columns: 14"
+"1",""
+"1","
+"
+"1","$ year           [3m[38;5;246m<int>[39m[23m 0
+$ month          [3m[38;5;246m<int>[39m[23m 0
+$ day            [3m[38;5;246m<int>[39m[23m 0
+$ dep_time       [3m[38;5;246m<int>[39m[23m 8255
+$ sched_dep_time [3m[38;5;246m<int>[39m[23m 0
+$ dep_delay      [3m[38;5;246m<int>[39m[23m 8255
+$ arr_time       [3m[38;5;246m<int>[39m[23m 8713
+$ sched_arr_time [3m[38;5;246m<int>[39m[23m 0
+$ arr_delay      [3m[38;5;246m<int>[39m[23m 9430
+$ flight         [3m[38;5;246m<int>[39m[23m 0
+$ air_time       [3m[38;5;246m<int>[39m[23m 9430
+$ distance       [3m[38;5;246m<int>[39m[23m 0
+$ hour           [3m[38;5;246m<int>[39m[23m 0
+$ minute         [3m[38;5;246m<int>[39m[23m 0"
+"1",""
+"1","
+"

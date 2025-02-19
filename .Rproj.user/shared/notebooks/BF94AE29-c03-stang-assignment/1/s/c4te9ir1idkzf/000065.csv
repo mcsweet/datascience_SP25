@@ -1,0 +1,4 @@
+"0",""
+"0","## Mean Poisson's Ratio of al_24st"
+"0","df_stang_long %>% "
+"0","  summarize(nu = mean(nu, na.rm = TRUE))"

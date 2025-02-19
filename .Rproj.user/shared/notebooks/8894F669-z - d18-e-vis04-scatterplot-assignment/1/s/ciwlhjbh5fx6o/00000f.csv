@@ -1,0 +1,6 @@
+"0","## TODO: Add a ""gam"" and ""lm"" smooth to the following plot"
+"0","diamonds %>%"
+"0","  ggplot(aes(carat, price)) +"
+"0","  geom_point() +"
+"0","  geom_smooth(aes(color = ""gam""), method = ""gam"") +"
+"0","  geom_smooth(aes(color = ""lm""), method = ""lm"")"

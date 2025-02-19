@@ -1,0 +1,29 @@
+"0","## NOTE: No need to change this!"
+"0","flights %>%"
+"0","  summarize(across(where(is.numeric), mean)) %>%"
+"0","  glimpse"
+"1","Rows: 1"
+"1",""
+"1","
+"
+"1","Columns: 14"
+"1",""
+"1","
+"
+"1","$ year           [3m[38;5;246m<dbl>[39m[23m 2013
+$ month          [3m[38;5;246m<dbl>[39m[23m 6.54851
+$ day            [3m[38;5;246m<dbl>[39m[23m 15.71079
+$ dep_time       [3m[38;5;246m<dbl>[39m[23m [31mNA[39m
+$ sched_dep_time [3m[38;5;246m<dbl>[39m[23m 1344.255
+$ dep_delay      [3m[38;5;246m<dbl>[39m[23m [31mNA[39m
+$ arr_time       [3m[38;5;246m<dbl>[39m[23m [31mNA[39m
+$ sched_arr_time [3m[38;5;246m<dbl>[39m[23m 1536.38
+$ arr_delay      [3m[38;5;246m<dbl>[39m[23m [31mNA[39m
+$ flight         [3m[38;5;246m<dbl>[39m[23m 1971.924
+$ air_time       [3m[38;5;246m<dbl>[39m[23m [31mNA[39m
+$ distance       [3m[38;5;246m<dbl>[39m[23m 1039.913
+$ hour           [3m[38;5;246m<dbl>[39m[23m 13.18025
+$ minute         [3m[38;5;246m<dbl>[39m[23m 26.2301"
+"1",""
+"1","
+"

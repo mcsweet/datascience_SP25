@@ -1,0 +1,7 @@
+"0","## TASK: Compute the probability that Z <= 0, assign to p0"
+"0","p0 <- pnorm(q = 0)"
+"0","p0"
+"1","[1]"
+"1"," 0.5"
+"1","
+"

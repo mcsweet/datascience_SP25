@@ -1,0 +1,8 @@
+"0","criteria <-"
+"0","## TODO: Use expand_grid to create a criteria dataframe"
+"0","  expand_grid("
+"0","    month = c(8,9),"
+"0","    dest = c(""SFO"", ""SJC"", ""OAK"")"
+"0","  )"
+"0",""
+"0","criteria"

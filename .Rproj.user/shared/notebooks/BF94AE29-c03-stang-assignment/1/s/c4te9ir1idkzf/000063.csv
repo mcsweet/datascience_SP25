@@ -1,0 +1,4 @@
+"0",""
+"0","## What thicknesses?"
+"0","df_stang_long %>% "
+"0","  distinct(thick)"

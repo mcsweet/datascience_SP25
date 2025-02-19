@@ -1,0 +1,32 @@
+{
+    "id": "DAEF7158",
+    "path": "~/GitHub/datascience_SP25/data-science-curriculum-build/exercises_sequenced/z - d19-e-stat03-descriptive-assignment.Rmd",
+    "project_path": "data-science-curriculum-build/exercises_sequenced/z - d19-e-stat03-descriptive-assignment.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1740000523745.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "cursorPosition": "444,0",
+        "scrollLine": "0",
+        "rmdVisualModeLocation": "2767:2640.800048828125",
+        "rmdVisualCollapsedChunks": "",
+        "last_setup_crc32": ""
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1739999492,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1740001533367,
+    "read_only": false,
+    "read_only_alternatives": []
+}

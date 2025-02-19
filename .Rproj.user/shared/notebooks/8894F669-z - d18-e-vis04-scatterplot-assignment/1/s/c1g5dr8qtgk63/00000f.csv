@@ -1,0 +1,6 @@
+"0","## NOTE: No need to modify! Just example code"
+"0","ggplot("
+"0","  data = mpg,"
+"0","  mapping = aes(x = displ, y = hwy)"
+"0",") +"
+"0","  geom_point()"

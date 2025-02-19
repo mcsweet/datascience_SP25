@@ -1,0 +1,7 @@
+"0","## NOTE: No need to change this!"
+"0","df_z <- tibble(z = rnorm(100))"
+"0",""
+"0","## TODO: Compute `count_total`, `count_A`, and `fr`"
+"0","df_z %>%"
+"0","  mutate(in_A = (z <= 0)) %>%"
+"0","  summarize(count_total = n(), count_A = sum(in_A), fr = mean(in_A))"

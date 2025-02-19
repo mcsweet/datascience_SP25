@@ -1,0 +1,7 @@
+"0","## TASK: Compute the probability that -1.96 <= Z <= +1.96, assign to pI"
+"0","pI <- pnorm(q = +1.96) - pnorm(q = -1.96)"
+"0","pI"
+"1","[1]"
+"1"," 0.9500042"
+"1","
+"

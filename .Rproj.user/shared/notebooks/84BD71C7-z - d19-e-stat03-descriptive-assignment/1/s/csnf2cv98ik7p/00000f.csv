@@ -1,0 +1,3 @@
+"0","## TASK: Edit to drop all NAs before computing the mean"
+"0","flights %>%"
+"0","  summarize(dep_delay = mean(dep_delay, na.rm = TRUE))"

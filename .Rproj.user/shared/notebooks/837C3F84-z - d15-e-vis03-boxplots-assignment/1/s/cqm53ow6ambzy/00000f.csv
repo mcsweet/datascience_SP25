@@ -1,0 +1,5 @@
+"0","## NOTE: No need to modify; run and inspect"
+"0","diamonds %>%"
+"0","  count(cut, color) %>%"
+"0","  ggplot(aes(cut, color, fill = n)) +"
+"0","  geom_tile()"

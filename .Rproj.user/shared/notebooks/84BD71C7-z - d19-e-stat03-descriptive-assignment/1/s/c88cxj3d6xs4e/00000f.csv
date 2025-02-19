@@ -1,0 +1,4 @@
+"0","## NOTE: No need to change this!"
+"0","gapminder %>%"
+"0","  filter(year == max(year)) %>%"
+"0","  vis_central(gdpPercap)"

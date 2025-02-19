@@ -1,0 +1,6 @@
+"0","## NOTE: No need to change; run this chunk"
+"0","df_stang_long %>%"
+"0",""
+"0","  ggplot(aes(nu, E, color = as_factor(thick))) +"
+"0","  geom_point(size = 3) +"
+"0","  theme_minimal()"

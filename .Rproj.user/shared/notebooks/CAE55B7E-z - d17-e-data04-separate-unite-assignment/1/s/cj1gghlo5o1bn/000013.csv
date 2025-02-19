@@ -1,0 +1,6 @@
+"0","## NOTE: No need to change this"
+"0","assertthat::assert_that("
+"0","              all_equal(df_q1, punnett)"
+"0",")"
+"2","Error: assert_that: assertion must return a logical value
+"

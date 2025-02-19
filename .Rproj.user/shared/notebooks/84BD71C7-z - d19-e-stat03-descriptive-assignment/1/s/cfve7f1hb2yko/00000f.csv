@@ -1,0 +1,4 @@
+"0","## NOTE: No need to change this!"
+"0","set.seed(101)"
+"0","tibble(z = rnorm(n = 1e3)) %>%"
+"0","  vis_central(z)"

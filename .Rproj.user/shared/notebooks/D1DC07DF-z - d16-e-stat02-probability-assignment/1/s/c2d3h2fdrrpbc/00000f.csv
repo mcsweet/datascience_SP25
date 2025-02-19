@@ -1,0 +1,6 @@
+"0","## NOTE: No need to change this!"
+"0","df_z <- tibble(z = rnorm(100))"
+"0",""
+"0","df_z %>%"
+"0","  mutate(in_A = (-1.96 <= z) & (z <= +1.96)) %>%"
+"0","  summarize(count_total = n(), count_A = sum(in_A), fr = mean(in_A))"

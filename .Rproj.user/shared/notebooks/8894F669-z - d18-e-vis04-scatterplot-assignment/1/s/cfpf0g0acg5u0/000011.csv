@@ -1,0 +1,4 @@
+"0","## NOTE: No need to modify! Just example code"
+"0","ggplot(mpg, aes(x = displ)) +"
+"0","  geom_point(aes(y = hwy, color = ""hwy"")) +"
+"0","  geom_point(aes(y = cty, color = ""cty""))"
