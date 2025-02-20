@@ -1,4 +1,5 @@
 "0",""
 "0","## Mean Poisson's Ratio of al_24st"
 "0","df_stang_long %>% "
-"0","  summarize(nu = mean(nu, na.rm = TRUE))"
+"0","  group_by(angle) %>% "
+"0","  summarise(E = mean(E))"

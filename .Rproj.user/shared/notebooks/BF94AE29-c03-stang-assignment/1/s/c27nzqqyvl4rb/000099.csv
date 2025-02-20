@@ -1,0 +1,6 @@
+"0",""
+"0","## scatter plot of angle and youngs modulus"
+"0","df_stang_plot %>%"
+"0","  group_by(angle) %>% "
+"0","  ggplot(aes(x = angle, y = E, fill = angle)) +"
+"0","  geom_point()"

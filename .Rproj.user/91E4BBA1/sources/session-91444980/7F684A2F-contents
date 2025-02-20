@@ -1,7 +1,7 @@
 ---
 title: "Aluminum Data"
-author: "(Your name here)"
-date: 2020-
+author: "Maya McKone-Sweet"
+date: 2025-2-20
 output:
   github_document:
     toc: true
@@ -132,20 +132,25 @@ df_stang_long %>%
 
 ## Mean Poisson's Ratio of al_24st
 df_stang_long %>% 
-  summarize(nu = mean(nu, na.rm = TRUE))
+  group_by(angle) %>% 
+  summarise(E = mean(E))
+
+
 ```
 
 **Observations**:
 
 -   Is there "one true value" for the material properties of Aluminum?
-    -   There is not one true value for the ma
+    -   **I know that any alloy of aluminum has multiple unique material properties. This includes elasticity modulus and possions ratio which are talked about above. So there is not "one true value" for a given alloy. There are multiple that can be used to characterize that alloy in relation to other alloys.**
 -   How many aluminum alloys are in this dataset? How do you know?
-    -   There is only 1 distinct alloy
+    -   There is one alloy. I know this because counted the number of distinct alloy names. The result was one..
 -   What angles were tested?
-    -   (Your response here)
+    -   0, 45, and 90 degrees were tested which I found by using the distinct function.
 -   What thicknesses were tested?
-    -   (Your response here)
--   What is the average Poisson's Ratio (nu) of a an alloy?
+    -   0.022, 0.032, 0.064, and 0.081 (inches) were the thicknesses measured. I found this by using the distinct function.
+-   Maya's Questions: Is there a relationship between angle and young's modulus? If so what is it?
+    -   see below
+    -   it is young's modulus because of how they took the data (aka tension test)
 
 ## Visualize
 
@@ -155,11 +160,39 @@ df_stang_long %>%
 
 ```{r q3-task}
 ## TASK: Investigate your question from q1 here
+## transform angle values from integeter to characters
+df_stang_plot <- 
+  df_stang_long %>%
+  transform(angle = as.character(angle))
+
+## summarise the median and mean of E for each angle
+df_stang_long %>% 
+  group_by(angle) %>% 
+  summarise(
+    Median_E = median(E), 
+    Mean_E = mean(E)
+    )
+
+## scatter plot of angle and youngs modulus
+df_stang_plot %>%
+  group_by(angle) %>% 
+  ggplot(aes(x = angle, y = E, fill = angle)) +
+  geom_point()
+
+df_stang_plot %>%
+  group_by(angle) %>% 
+  ggplot(aes(x = angle, y = E, fill = angle)) +
+  geom_boxplot()
+
+
 ```
 
 **Observations**:
 
--   (Address your question from q1 here)
+-   I started by taking the mean and mode of young's modulus for each angle. The medians results in 0 and 90 degrees having the same value and 45 having a higher value. This suggests there might be no correlation or just a small one. The median suggests that same thing. So far I can not form any conclusions.
+-   Plot 1 shows not tends between angle and young's modulus. In fact young's modulus ranges between relatively all the same values for each angle. This suggests there is not trend between young's modulus and angle. I want to look at the data one other way before finalizing my answer.
+-   Plot 2 is a box plot. As predicted the median for all three angles is about the same. 0 and 90 degrees have far more variation in their data from the mean and angle 45 is the only one with an outlier. Although from plot 1 we know that the values range for all angles.
+-   Answer: Angle does not affect Young's Modulus. As angle changes young's modulus does not notably change. This is clear in plot 1 where there is variation in young's modulus for each angle and in plot 2 where the median is roughly a horizontal trend line.
 
 ### **q4** Consider the following statement:
 
@@ -179,9 +212,9 @@ df_stang_long %>%
 **Observations**:
 
 -   Does this graph support or contradict the claim above?
-    -   (Your response here)
+    -   It contradicts the statement.
 -   Is this evidence *conclusive* one way or another?
-    -   (Your response here)
+    -   No. 0.022, 0.032, and 0.064 are tend to have a higher elasticity value then 0.081 which is distinctly separate on the graph. More data needs to be taken by testing more thicknesses of material. This could potentially give more insight into this relationship between material thickness and elasticity.
 
 # References
 

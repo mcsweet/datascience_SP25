@@ -1,0 +1,32 @@
+{
+    "id": "6C62BFD8",
+    "path": "~/GitHub/datascience_SP25/data-science-curriculum-build/exercises_sequenced/z - d15-e-vis03-boxplots-assignment.Rmd",
+    "project_path": "data-science-curriculum-build/exercises_sequenced/z - d15-e-vis03-boxplots-assignment.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1740086706205.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "rmdVisualMode": "true",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "1264:0",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "cursorPosition": "97,0",
+        "scrollLine": "0",
+        "last_setup_crc32": "4f61cc7db049b5"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1739990930,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1739990930,
+    "read_only": false,
+    "read_only_alternatives": []
+}
