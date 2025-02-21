@@ -1,0 +1,5 @@
+"0",""
+"0","df_q2 %>% "
+"0","  ggplot(aes( x = Temp, y =VelocityVacuum)) +"
+"0","  geom_smooth() +"
+"0","  labs(title = ""Trends of Velocity in Vacuum vs. Temperature"", x = ""Temperature"", y = ""Velocity of Light"")"

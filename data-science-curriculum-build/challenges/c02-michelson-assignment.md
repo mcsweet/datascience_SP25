@@ -171,7 +171,10 @@ df_q1 %>%
   - It could be taking different amount into their calculation of the
     mean data. Potentially when transferring the data we forgot a few
     lines. I assume it is due to different ways of calculating mean or
-    difference in the data we are analysing
+    difference in the data we are analyzing.
+  - This error could also be due to difference in methods of rounding
+    with the data. That would explain the why the numbers are only
+    slightly off (about 1-2)
 
 The `Velocity` values in the dataset are the speed of light *in air*;
 Michelson introduced a couple of adjustments to estimate the speed of
@@ -191,112 +194,23 @@ df_q2 <- df_michelson %>%
   ) 
 
 df_q2 %>% 
-  arrange(desc(Distinctness)) %>%
-  knitr::kable()
+  arrange(desc(Distinctness))
 ```
 
-| Date       | Distinctness | Temp | Velocity | VelocityVacuum |
-|:-----------|:-------------|-----:|---------:|---------------:|
-| 1879-06-05 | 3            |   76 |   299850 |         299942 |
-| 1879-06-09 | 3            |   83 |   299950 |         300042 |
-| 1879-06-09 | 3            |   83 |   299980 |         300072 |
-| 1879-06-09 | 3            |   83 |   299980 |         300072 |
-| 1879-06-09 | 3            |   83 |   299880 |         299972 |
-| 1879-06-13 | 3            |   72 |   300000 |         300092 |
-| 1879-06-13 | 3            |   72 |   300000 |         300092 |
-| 1879-06-13 | 3            |   79 |   299960 |         300052 |
-| 1879-06-13 | 3            |   79 |   299960 |         300052 |
-| 1879-06-13 | 3            |   79 |   299940 |         300032 |
-| 1879-06-13 | 3            |   79 |   299960 |         300052 |
-| 1879-06-13 | 3            |   79 |   299940 |         300032 |
-| 1879-06-13 | 3            |   79 |   299880 |         299972 |
-| 1879-06-13 | 3            |   79 |   299800 |         299892 |
-| 1879-06-17 | 3            |   77 |   299800 |         299892 |
-| 1879-06-17 | 3            |   77 |   299880 |         299972 |
-| 1879-06-17 | 3            |   77 |   299880 |         299972 |
-| 1879-06-17 | 3            |   77 |   299880 |         299972 |
-| 1879-06-17 | 3            |   77 |   299860 |         299952 |
-| 1879-06-20 | 3            |   60 |   299880 |         299972 |
-| 1879-06-20 | 3            |   61 |   299910 |         300002 |
-| 1879-06-21 | 3            |   80 |   299770 |         299862 |
-| 1879-06-21 | 3            |   81 |   299760 |         299852 |
-| 1879-06-21 | 3            |   82 |   299740 |         299832 |
-| 1879-06-21 | 3            |   82 |   299750 |         299842 |
-| 1879-06-21 | 3            |   81 |   299760 |         299852 |
-| 1879-06-23 | 3            |   89 |   299910 |         300002 |
-| 1879-06-23 | 3            |   89 |   299920 |         300012 |
-| 1879-06-23 | 3            |   90 |   299890 |         299982 |
-| 1879-06-23 | 3            |   90 |   299860 |         299952 |
-| 1879-06-23 | 3            |   90 |   299880 |         299972 |
-| 1879-06-24 | 3            |   72 |   299720 |         299812 |
-| 1879-06-24 | 3            |   73 |   299840 |         299932 |
-| 1879-06-24 | 3            |   74 |   299850 |         299942 |
-| 1879-06-24 | 3            |   75 |   299850 |         299942 |
-| 1879-06-24 | 3            |   76 |   299780 |         299872 |
-| 1879-06-27 | 3            |   73 |   299780 |         299872 |
-| 1879-06-27 | 3            |   74 |   299810 |         299902 |
-| 1879-06-27 | 3            |   75 |   299760 |         299852 |
-| 1879-06-27 | 3            |   75 |   299810 |         299902 |
-| 1879-06-27 | 3            |   76 |   299790 |         299882 |
-| 1879-06-27 | 3            |   76 |   299810 |         299902 |
-| 1879-07-02 | 3            |   86 |   299950 |         300042 |
-| 1879-07-02 | 3            |   86 |   299800 |         299892 |
-| 1879-07-02 | 3            |   86 |   299810 |         299902 |
-| 1879-07-02 | 3            |   85 |   299870 |         299962 |
-| 1879-06-07 | 2            |   72 |   299740 |         299832 |
-| 1879-06-07 | 2            |   72 |   299900 |         299992 |
-| 1879-06-07 | 2            |   72 |   300070 |         300162 |
-| 1879-06-07 | 2            |   72 |   299930 |         300022 |
-| 1879-06-07 | 2            |   72 |   299850 |         299942 |
-| 1879-06-09 | 2            |   83 |   300000 |         300092 |
-| 1879-06-10 | 2            |   90 |   299980 |         300072 |
-| 1879-06-10 | 2            |   90 |   299930 |         300022 |
-| 1879-06-12 | 2            |   71 |   299650 |         299742 |
-| 1879-06-12 | 2            |   71 |   299760 |         299852 |
-| 1879-06-13 | 2            |   72 |   299960 |         300052 |
-| 1879-06-17 | 2            |   62 |   299800 |         299892 |
-| 1879-06-17 | 2            |   63 |   299790 |         299882 |
-| 1879-06-18 | 2            |   75 |   299860 |         299952 |
-| 1879-06-18 | 2            |   75 |   299970 |         300062 |
-| 1879-06-18 | 2            |   75 |   299950 |         300042 |
-| 1879-06-20 | 2            |   62 |   299850 |         299942 |
-| 1879-06-20 | 2            |   63 |   299870 |         299962 |
-| 1879-06-20 | 2            |   78 |   299840 |         299932 |
-| 1879-06-20 | 2            |   79 |   299840 |         299932 |
-| 1879-06-20 | 2            |   80 |   299850 |         299942 |
-| 1879-06-20 | 2            |   79 |   299840 |         299932 |
-| 1879-06-20 | 2            |   79 |   299840 |         299932 |
-| 1879-06-20 | 2            |   79 |   299840 |         299932 |
-| 1879-06-21 | 2            |   61 |   299890 |         299982 |
-| 1879-06-21 | 2            |   62 |   299810 |         299902 |
-| 1879-06-21 | 2            |   63 |   299810 |         299902 |
-| 1879-06-21 | 2            |   64 |   299820 |         299912 |
-| 1879-06-21 | 2            |   65 |   299800 |         299892 |
-| 1879-06-26 | 2            |   86 |   299890 |         299982 |
-| 1879-06-26 | 2            |   86 |   299840 |         299932 |
-| 1879-06-30 | 2            |   85 |   299820 |         299912 |
-| 1879-06-30 | 2            |   86 |   299850 |         299942 |
-| 1879-06-30 | 2            |   86 |   299870 |         299962 |
-| 1879-06-30 | 2            |   86 |   299870 |         299962 |
-| 1879-07-01 | 2            |   83 |   299810 |         299902 |
-| 1879-07-01 | 2            |   84 |   299740 |         299832 |
-| 1879-07-01 | 2            |   86 |   299810 |         299902 |
-| 1879-07-01 | 2            |   86 |   299940 |         300032 |
-| 1879-06-12 | 1            |   71 |   299810 |         299902 |
-| 1879-06-14 | 1            |   64 |   299850 |         299942 |
-| 1879-06-14 | 1            |   64 |   299880 |         299972 |
-| 1879-06-14 | 1            |   65 |   299900 |         299992 |
-| 1879-06-14 | 1            |   66 |   299840 |         299932 |
-| 1879-06-14 | 1            |   67 |   299830 |         299922 |
-| 1879-06-14 | 1            |   84 |   299790 |         299882 |
-| 1879-06-14 | 1            |   85 |   299810 |         299902 |
-| 1879-06-14 | 1            |   84 |   299880 |         299972 |
-| 1879-06-14 | 1            |   84 |   299880 |         299972 |
-| 1879-06-14 | 1            |   84 |   299830 |         299922 |
-| 1879-06-17 | 1            |   64 |   299760 |         299852 |
-| 1879-06-18 | 1            |   58 |   299720 |         299812 |
-| 1879-06-18 | 1            |   58 |   299720 |         299812 |
-| 1879-06-18 | 1            |   59 |   299620 |         299712 |
+    ## # A tibble: 100 × 5
+    ##    Date                Distinctness  Temp Velocity VelocityVacuum
+    ##    <dttm>              <fct>        <dbl>    <dbl>          <dbl>
+    ##  1 1879-06-05 00:00:00 3               76   299850         299942
+    ##  2 1879-06-09 00:00:00 3               83   299950         300042
+    ##  3 1879-06-09 00:00:00 3               83   299980         300072
+    ##  4 1879-06-09 00:00:00 3               83   299980         300072
+    ##  5 1879-06-09 00:00:00 3               83   299880         299972
+    ##  6 1879-06-13 00:00:00 3               72   300000         300092
+    ##  7 1879-06-13 00:00:00 3               72   300000         300092
+    ##  8 1879-06-13 00:00:00 3               79   299960         300052
+    ##  9 1879-06-13 00:00:00 3               79   299960         300052
+    ## 10 1879-06-13 00:00:00 3               79   299940         300032
+    ## # ℹ 90 more rows
 
 As part of his study, Michelson assessed the various potential sources
 of error, and provided his best-guess for the error in his
@@ -330,14 +244,15 @@ tibble(
   LowerBound = LIGHTSPEED_MICHELSON - LIGHTSPEED_PM,
   UpperBound = LIGHTSPEED_MICHELSON + LIGHTSPEED_PM,
   Vacuum_LIGHTSPEED = LIGHTSPEED_VACUUM,
-  Error = LIGHTSPEED_VACUUM - LIGHTSPEED_MICHELSON
+  Error = LIGHTSPEED_VACUUM - LIGHTSPEED_MICHELSON,
+  Ratio = LIGHTSPEED_PM / Error
 )
 ```
 
-    ## # A tibble: 1 × 5
-    ##   Michelson_LIGHTSPEED LowerBound UpperBound Vacuum_LIGHTSPEED Error
-    ##                  <dbl>      <dbl>      <dbl>             <dbl> <dbl>
-    ## 1               299944     299893     299995           299792. -152.
+    ## # A tibble: 1 × 6
+    ##   Michelson_LIGHTSPEED LowerBound UpperBound Vacuum_LIGHTSPEED Error  Ratio
+    ##                  <dbl>      <dbl>      <dbl>             <dbl> <dbl>  <dbl>
+    ## 1               299944     299893     299995           299792. -152. -0.337
 
 ``` r
 # print(LowerBound)
@@ -359,9 +274,16 @@ tibble(
 
   - Michelson’s data is uncertain as in all of its measurements has a +-
     51 value range from the average. In addition to this none of the
-    data measurements are in the bounds of the Vacuum Light Speed. This
-    means the measured and the actual light speed do not overlap in
-    value and the data is not accurate.
+    data measurements are in the bounds of the Vacuum Light Speed.
+    Michelson’s error was larger than his estimation of the error (aka
+    his uncertainty). His data was off from the actual value but in the
+    grand scheme of scale the numbers are surprisingly close.
+  - The ratio between uncertainty and error is 0.336. This means the
+    uncertainty is not great enough to account for the full error in the
+    measurements. The uncertainty can account for what could be
+    considered 33% of the error. aka the uncertainty can take the
+    results to be closer to the actual speed of light but does not make
+    them the same.
 
 The following plot shows all of Michelson’s data as a [control
 chart](https://en.wikipedia.org/wiki/Control_chart); this sort of plot
@@ -494,14 +416,17 @@ df_q2 %>%
   variation in the data to make any accurate observations. This graph
   shows me that on the low range of data and high range (\<65 and \>85)
   there is a more exponential relationship between temperature and the
-  measured velocity in the vacuum. This suggests that temperature could
-  affect the velocity measurements which potentially could be due to
-  experimental set-up or error in measurement equipment. Temperature
-  does not affect the actual speed of light from my knowledge. From
-  65-85 degrees the velocity is tends to be consistent (in +- 15 from an
-  average of about 299940). There is potential error in this smooth line
-  graph as seen by the shaded regions and thus more analysis could be
-  done.
+  measured velocity in the vacuum. This is puzzling because in a vacuum
+  we do not expect a change in speed of light due to temperature. In a
+  median like air we might see a significantly small change due to the
+  index of refraction. The trend on this graph is far more dramatic than
+  that trend and comes from already untrustworthy data. We should not
+  draw any claims about temperature having an effect on speed of light
+  based on this data. Temperature does not affect the actual speed of
+  light from my knowledge. From 65-85 degrees the velocity is tends to
+  be consistent (in +- 15 from an average of about 299940). There is
+  potential error in this smooth line graph as seen by the shaded
+  regions and thus more analysis could be done.
 
 ``` r
 df_q5 <- 

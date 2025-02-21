@@ -1,1 +1,4 @@
-"0","  "
+"0","df_q2 %>%"
+"0","  ggplot(aes(VelocityVacuum, color = Distinctness)) +"
+"0","  geom_density() +"
+"0","  labs(title = ""Density of Measured Velocity Values Per Distinctness"", x = ""Velocity of Light"", y = ""Density"")"
