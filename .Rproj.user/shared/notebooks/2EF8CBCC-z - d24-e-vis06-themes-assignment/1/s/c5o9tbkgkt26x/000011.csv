@@ -1,0 +1,8 @@
+"0","mpg %>%"
+"0","  ggplot(aes(displ, hwy, color = class)) +"
+"0","  geom_point() +"
+"0","  theme_common() + "
+"0","  labs("
+"0","    x = ""Engine Displacement (L)"","
+"0","    y = ""Highway Fuel Economy (mpg)"""
+"0","  )"

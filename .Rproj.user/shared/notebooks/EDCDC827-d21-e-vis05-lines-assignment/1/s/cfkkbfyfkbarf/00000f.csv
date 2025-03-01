@@ -1,6 +1,0 @@
-"0","## TODO: No need to edit; just interpret the graph"
-"0","economics %>%"
-"0","  ggplot(aes(date, unemploy)) +"
-"0","  geom_line(aes(color = ""Raw"")) +"
-"0","  geom_smooth(aes(color = ""Smoothed""), se = FALSE) +"
-"0","  scale_color_discrete(name = ""Source"")"

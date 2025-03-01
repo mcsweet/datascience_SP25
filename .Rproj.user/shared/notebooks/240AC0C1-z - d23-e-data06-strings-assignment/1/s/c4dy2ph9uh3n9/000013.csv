@@ -1,0 +1,5 @@
+"0","## TODO: Mutate trans to remove the parentheses and all characters inside"
+"0","df_q5 <-"
+"0","  mpg %>% "
+"0","  mutate(trans = str_remove(trans, ""\\(.*\\)""))"
+"0","df_q5"

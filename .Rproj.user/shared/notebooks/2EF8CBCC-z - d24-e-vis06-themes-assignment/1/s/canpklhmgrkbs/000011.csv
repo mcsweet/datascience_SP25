@@ -1,0 +1,5 @@
+"0","mpg %>%"
+"0","  ggplot(aes(displ, hwy, color = class)) +"
+"0","  geom_point() +"
+"0","  guides(color = ""none"") +"
+"0","  theme_void()"

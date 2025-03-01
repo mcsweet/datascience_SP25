@@ -1,0 +1,6 @@
+"0","## TASK: Mutate `trans` to extract"
+"0","df_q3 <-"
+"0","  mpg %>% "
+"0","  mutate(tmp = str_extract(trans, ""[[:alpha:]]\\d""))"
+"0","df_q3 %>%"
+"0","  select(tmp)"

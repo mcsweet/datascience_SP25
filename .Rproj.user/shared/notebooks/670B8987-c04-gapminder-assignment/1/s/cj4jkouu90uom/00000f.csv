@@ -1,0 +1,6 @@
+"0","## TASK: Identify the outliers from q2"
+"0","outliersQ3 <-"
+"0","gapminder %>%"
+"0","  filter(year == year_min) %>%"
+"0","  arrange(desc(gdpPercap)) %>%"
+"0","  head(3)"

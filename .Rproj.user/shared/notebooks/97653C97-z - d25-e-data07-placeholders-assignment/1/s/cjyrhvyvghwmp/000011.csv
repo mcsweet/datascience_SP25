@@ -1,0 +1,8 @@
+"0","## TASK: Uncomment and run this code; explain"
+"0","##       why it fails and fix it."
+"0","2 %>%"
+"0","  {. * .}"
+"1","[1]"
+"1"," 4"
+"1","
+"

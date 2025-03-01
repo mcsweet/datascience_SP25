@@ -1,5 +1,0 @@
-"0","## TODO: Fix the following code"
-"0","gapminder %>%"
-"0","  filter(continent == ""Asia"") %>%"
-"0","  ggplot(aes(year, lifeExp, color = country)) +"
-"0","  geom_line()"

@@ -1,0 +1,7 @@
+"0","## TASK: Create a visual of gdpPercap vs continent"
+"0","gapminder %>%"
+"0","  filter(year == year_min) %>%"
+"0","  filter(gdpPercap < max(gdpPercap)) %>%"
+"0","  ggplot(aes(continent, gdpPercap, fill = continent)) +"
+"0","  geom_boxplot() + "
+"0","  theme(legend.position = ""none"")"

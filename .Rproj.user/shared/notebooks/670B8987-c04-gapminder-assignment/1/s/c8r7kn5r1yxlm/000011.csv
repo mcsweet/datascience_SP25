@@ -1,0 +1,7 @@
+"0","## TASK: Your first graph"
+"0","gapminder %>% "
+"0","  filter(year == year_min | year == year_max) %>% "
+"0","  ggplot(aes(continent, lifeExp, fill = continent)) +"
+"0","  geom_boxplot() + "
+"0","  theme(legend.position = ""none"") + "
+"0","  facet_wrap(~year)"
