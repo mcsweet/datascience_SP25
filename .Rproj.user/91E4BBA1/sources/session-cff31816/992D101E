@@ -1,0 +1,32 @@
+{
+    "id": "992D101E",
+    "path": "~/GitHub/datascience_SP25/data-science-curriculum-build/challenges/c06-covid19-assignment.Rmd",
+    "project_path": "data-science-curriculum-build/challenges/c06-covid19-assignment.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1741375336355.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "cursorPosition": "88,0",
+        "scrollLine": "0",
+        "rmdVisualModeLocation": "4783:2388.800048828125",
+        "rmdVisualCollapsedChunks": "",
+        "last_setup_crc32": "cff31816652b514f"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1737594215,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1741376335963,
+    "read_only": false,
+    "read_only_alternatives": []
+}
