@@ -1,0 +1,6 @@
+"0","## NOTE: No need to change this!"
+"0","tibble(z = seq(-4, +4, length.out = 500)) %>%"
+"0","  mutate(d = dnorm(z)) %>%"
+"0",""
+"0","  ggplot(aes(z, d)) +"
+"0","  geom_line()"

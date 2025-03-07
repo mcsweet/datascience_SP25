@@ -1,0 +1,28 @@
+"0","## Helper function to count num rows w/ NA in vars_lagged"
+"0","rowAny <- function(x) rowSums(x) > 0"
+"0","countna <- function(df, vars_lagged) {"
+"0","  df %>%"
+"0","    filter(rowAny(across(vars_lagged, is.na))) %>%"
+"0","    dim %>%"
+"0","    .[[1]]"
+"0","}"
+"0",""
+"0","countna(df_q3, c(""region""))"
+"2","Warning: [38;5;232mThere was 1 warning in `filter()`.[39m
+[38;5;232m[36mℹ[38;5;232m In argument: `rowAny(across(vars_lagged, is.na))`.[39m
+Caused by warning:
+[38;5;232m[33m![38;5;232m Using an external vector in selections was deprecated in tidyselect 1.1.0.
+[36mℹ[38;5;232m Please use `all_of()` or `any_of()` instead.
+  # Was:
+  data %>% select(vars_lagged)
+
+  # Now:
+  data %>% select(all_of(vars_lagged))
+
+See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
+[90mThis warning is displayed once every 8 hours.[38;5;232m
+[90mCall `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.[38;5;232m[39m"
+"1","[1]"
+"1"," 435"
+"1","
+"

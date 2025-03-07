@@ -1,0 +1,5 @@
+"0","df_antibiotic_long %>% "
+"0","  mutate(bacteria = fct_reorder(bacteria, MIC)) %>% "
+"0","  ggplot(aes(antibiotic, bacteria)) +"
+"0","  geom_tile(aes(fill = MIC)) + "
+"0","  scale_fill_viridis_c(name = ""MIC"", trans = ""log"") "

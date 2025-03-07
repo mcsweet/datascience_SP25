@@ -1,0 +1,4 @@
+"0","## NOTE: No need to edit; run and criticize"
+"0","diamonds %>%"
+"0","  ggplot(aes(clarity, fill = cut)) +"
+"0","  geom_bar()"

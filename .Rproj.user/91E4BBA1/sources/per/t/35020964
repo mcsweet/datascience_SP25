@@ -1,0 +1,32 @@
+{
+    "id": "35020964",
+    "path": "~/GitHub/datascience_SP25/data-science-curriculum-build/challenges/c05-antibiotics-assignment.Rmd",
+    "project_path": "data-science-curriculum-build/challenges/c05-antibiotics-assignment.Rmd",
+    "type": "r_markdown",
+    "hash": "3398257611",
+    "contents": "",
+    "dirty": false,
+    "created": 1741223505775.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "rmdVisualMode": "true",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "9379:7543.2001953125",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "cursorPosition": "258,0",
+        "scrollLine": "0",
+        "last_setup_crc32": "4a80e679138a29df"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1741317310,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1741317310386,
+    "read_only": false,
+    "read_only_alternatives": []
+}

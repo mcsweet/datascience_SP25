@@ -1,0 +1,7 @@
+"0","library(tidyverse)"
+"0","library(readxl) # For reading Excel sheets"
+"0","library(httr) # For downloading files"
+"0",""
+"0","## Use my tidy-exercises copy of UNDOC data for stability"
+"0","url_undoc <- ""https://github.com/zdelrosario/tidy-exercises/blob/master/2019/2019-12-10-news-plots/GSH2013_Homicide_count_and_rate.xlsx?raw=true"""
+"0","filename <- ""./data/undoc.xlsx"""

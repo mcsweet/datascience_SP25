@@ -1,0 +1,6 @@
+"0","df_antibiotic_long %>% "
+"0","  ggplot(aes(gram, MIC)) +"
+"0","  geom_boxplot() +"
+"0","  geom_point(aes(color = bacteria)) + "
+"0","  scale_y_log10() +"
+"0","  facet_wrap(~antibiotic)"

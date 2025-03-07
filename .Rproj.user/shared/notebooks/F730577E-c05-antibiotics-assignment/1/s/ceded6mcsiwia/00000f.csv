@@ -1,0 +1,6 @@
+"0","df_antibiotic_long %>% "
+"0","  ggplot(aes(MIC, bacteria, fill = bacteria)) +"
+"0","  geom_bar(stat = ""identity"") + "
+"0","  scale_x_continuous(trans = ""log"") +"
+"0","  facet_grid(~antibiotic) +"
+"0","  theme(axis.text.x = element_text(angle = 90, hjust = 1))"

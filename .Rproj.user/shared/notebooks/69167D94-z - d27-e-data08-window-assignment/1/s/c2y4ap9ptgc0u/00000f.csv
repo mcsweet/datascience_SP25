@@ -1,0 +1,5 @@
+"0","## TASK: Use a rank function to filter the `mpg` data"
+"0","q2 <- "
+"0","  mpg %>% "
+"0","  filter(dense_rank(desc(hwy)) <= 3)"
+"0","q2"

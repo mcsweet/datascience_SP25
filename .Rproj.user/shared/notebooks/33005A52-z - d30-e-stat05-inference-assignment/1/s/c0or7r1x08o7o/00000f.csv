@@ -1,0 +1,8 @@
+"0","## NOTE: No need to edit"
+"0","df_data_norm %>% "
+"0","  bootstraps(., times = 1) %>% "
+"0","  # Pull out a single `splits` object"
+"0","  pull(splits) %>% "
+"0","  .[[1]] %>% "
+"0","  # Use analysis() to turn the split into a usable dataset"
+"0","  analysis()"

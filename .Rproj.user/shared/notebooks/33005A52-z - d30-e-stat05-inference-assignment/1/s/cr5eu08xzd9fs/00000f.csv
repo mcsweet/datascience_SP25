@@ -1,0 +1,8 @@
+"0","df_data_norm %>% "
+"0","  bootstraps(., times = 1000)"
+"1","#"
+"1"," "
+"1","Bootstrap sampling"
+"1"," "
+"1","
+"

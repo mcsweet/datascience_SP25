@@ -1,0 +1,7 @@
+"0","## TASK: Modify the following code to sort the factor `manufacturer` based on"
+"0","## `cty`."
+"0","mpg %>%"
+"0","  mutate(manufacturer = fct_reorder(manufacturer, cty)) %>% "
+"0","  ggplot(aes(manufacturer, cty)) +"
+"0","  geom_boxplot() +"
+"0","  coord_flip()"

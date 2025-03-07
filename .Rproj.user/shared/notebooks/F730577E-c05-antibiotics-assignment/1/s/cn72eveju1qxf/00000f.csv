@@ -1,0 +1,7 @@
+"0","# WRITE YOUR CODE HERE"
+"0","df_antibiotic_long %>% "
+"0","  mutate(bacteria = fct_reorder(bacteria, MIC)) %>% "
+"0","  ggplot(aes(MIC, bacteria, color = gram)) +"
+"0","  geom_point() + "
+"0","  scale_x_log10() +"
+"0","  facet_wrap(~antibiotic)"

@@ -1,0 +1,8 @@
+"0","## NOTE: No need to edit; run to authorize R to use your google account"
+"0","gs4_auth()"
+"2","[38;5;232mThe [34mgooglesheets4[38;5;232m package is requesting access to your Google account.
+Enter '1' to start a new auth process or select a pre-authorized account.
+[1m1[22m: Send me to the browser for a new auth process.
+[1m2[22m: maya.mcsweet@gmail.com[39m"
+"2","[38;5;232mEnter a number between 1 and 2, or enter 0 to exit.[39m"
+"0","2"

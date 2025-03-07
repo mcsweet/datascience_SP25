@@ -1,0 +1,8 @@
+"0","## TASK: Modify the following code to sort the factor `country` based on `year`"
+"0","## and `pop`."
+"0","gapminder %>%"
+"0","  filter(dense_rank(country) <= 7) %>%"
+"0","  mutate(fct_reorder2(country, year, pop)) %>% "
+"0","  ggplot(aes(year, pop, color = country)) +"
+"0","  geom_line() +"
+"0","  scale_y_log10()"
