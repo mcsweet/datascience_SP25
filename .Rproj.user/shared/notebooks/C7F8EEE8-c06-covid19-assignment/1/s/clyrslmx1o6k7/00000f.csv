@@ -1,0 +1,5 @@
+"0","## TASK: Create a `fips` column by extracting the county code"
+"0","df_q3 <-"
+"0","  df_pop %>% "
+"0","  mutate(fips = str_extract(id, ""[^US]*$""))"
+"0","head(df_q3)"

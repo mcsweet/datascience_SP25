@@ -1,0 +1,7 @@
+"0","## TASK: Load the census bureau data with the following tibble name."
+"0","## TASK: Load the census bureau data with the following tibble name."
+"0","filename <- ""./data/Pop_Data.csv"""
+"0","df_pop <- read_csv(filename, skip = 2, na = ""*****"", col_types = ""ccd_d__"", col_names = c(""id"", ""Geographic Area Name"", ""Estimate!!Total"", ""Margin of Error!!Total""))"
+"2","Warning: [38;5;232mOne or more parsing issues, call `problems()` on your data frame for details, e.g.:
+  dat <- vroom(...)
+  problems(dat)[39m"

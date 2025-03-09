@@ -1,0 +1,5 @@
+"0","## TASK: Normalize cases and deaths"
+"0","df_normalized <-"
+"0","  df_data %>% "
+"0","  mutate(cases_per100k = cases/population * 100000) %>% "
+"0","  mutate(deaths_per100k = deaths/population * 100000)"
