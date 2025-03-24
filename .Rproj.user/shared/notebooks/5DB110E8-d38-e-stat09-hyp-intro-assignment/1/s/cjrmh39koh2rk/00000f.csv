@@ -1,0 +1,6 @@
+"0","## NOTE: No need to change this!"
+"0","set.seed(101)"
+"0",""
+"0","df_sample <-"
+"0","  df_population %>%"
+"0","  slice_sample(n = 100)"

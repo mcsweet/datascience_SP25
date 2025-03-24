@@ -1,0 +1,7 @@
+"0","## TASK: Estimate `epsilon_mean` and `epsilon_sd` from df_q1"
+"0","df_q2 <-"
+"0","  df_q1 %>% "
+"0","  summarize("
+"0","    epsilon_mean = mean(epsilon_c),"
+"0","    epsilon_sd = sd(epsilon_c)"
+"0","  )"

@@ -1,0 +1,31 @@
+{
+    "id": "FE550B0D",
+    "path": "~/GitHub/datascience_SP25/data-science-curriculum-build/challenges/c07-monte-carlo-assignment.Rmd",
+    "project_path": "data-science-curriculum-build/challenges/c07-monte-carlo-assignment.Rmd",
+    "type": "r_markdown",
+    "hash": "3592857799",
+    "contents": "",
+    "dirty": false,
+    "created": 1742757817388.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "cursorPosition": "141,0",
+        "scrollLine": "0",
+        "rmdVisualModeLocation": "10625:0",
+        "rmdVisualCollapsedChunks": ""
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1742833501,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1742833501425,
+    "read_only": false,
+    "read_only_alternatives": []
+}

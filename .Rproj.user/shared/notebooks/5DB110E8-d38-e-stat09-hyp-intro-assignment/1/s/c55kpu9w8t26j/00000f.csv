@@ -1,0 +1,3 @@
+"0","## TASK: Compute the population mean of diamond price"
+"0","df_population %>%"
+"0","  summarize(price = mean(price))"
