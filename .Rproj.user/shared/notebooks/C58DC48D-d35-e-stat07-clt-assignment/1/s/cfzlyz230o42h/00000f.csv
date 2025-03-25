@@ -1,5 +1,0 @@
-"0","## TASK: Estimate a 99% confidence interval with the sample below"
-"0","set.seed(101)"
-"0","z_q1 <- rnorm(n = 100, mean = 1, sd = 2)"
-"0","lo_q1 <- NA_real_"
-"0","hi_q1 <- NA_real_"

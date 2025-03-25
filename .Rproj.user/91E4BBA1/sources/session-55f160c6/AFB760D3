@@ -1,0 +1,32 @@
+{
+    "id": "AFB760D3",
+    "path": "~/GitHub/datascience_SP25/data-science-curriculum-build/exercises_sequenced/z - d38-e-stat09-hyp-intro-assignment.Rmd",
+    "project_path": "data-science-curriculum-build/exercises_sequenced/z - d38-e-stat09-hyp-intro-assignment.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1742757807170.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "cursorPosition": "169,0",
+        "scrollLine": "0",
+        "rmdVisualModeLocation": "2:0",
+        "rmdVisualCollapsedChunks": "",
+        "last_setup_crc32": ""
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1742833491,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1742857261097,
+    "read_only": false,
+    "read_only_alternatives": []
+}

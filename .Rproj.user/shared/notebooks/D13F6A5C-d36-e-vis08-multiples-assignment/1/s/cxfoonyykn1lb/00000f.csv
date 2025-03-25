@@ -1,5 +1,0 @@
-"0","## NOTE: No need to edit; study this example"
-"0","mpg %>%"
-"0","  ggplot(aes(displ, hwy)) +"
-"0","  geom_point() +"
-"0","  facet_wrap(~class)"

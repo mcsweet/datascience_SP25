@@ -117,8 +117,13 @@ Pick a sample size $n$ and generate $n$ points *uniform randomly* in the square 
 
 ```{r q1-task}
 ## TASK: Choose a sample size and generate samples
-n <- NA_real_ # Choose a sample size
-df_q1 <- NA # Generate the data
+n <- 100000 # Choose a sample size
+x <- runif(n, min = 0, max = 1)
+y <- runif(n, min = 0, max = 1)
+
+df_q1 <-
+  tibble(x,y)
+df_q1
 ```
 
 Use the following to check that you've used the correct variable names. (NB. This does not check correctness.)
@@ -152,7 +157,9 @@ Answer the questions below.
 ```{r q2-task}
 ## TASK: Finish implementing this function
 stat <- function(x, y) {
-  # TODO: Finish implementing this function
+  r <- sqrt(x^2 + y^2)
+  in_circle <- r <= 1
+  stat <- 4 * in_circle
 }
 ```
 
@@ -163,20 +170,20 @@ Implement your own assert statements. They should pass using your implementation
 
 # Check the value for points *inside* the circle
 assertthat::assert_that(
-  # tibble(x = ?, y = ?) %>% # Pick a point *inside* the circle
+    tibble(x = 0, y = 0) %>% # Pick a point *inside* the circle
     mutate(stat = stat(x, y)) %>% 
     pull(stat) %>% 
-    .[[1]] ==
+    .[[1]] == 4,
   # ???, # Write the correct value of stat() here
   msg = "Incorrect value when a point is inside the circle"
 )
 
 # Check the value for points *outside* the circle
 assertthat::assert_that(
-  # tibble(x = ?, y = ?) %>% # Pick a point *outside* the circle
+   tibble(x = 1, y = 1) %>% # Pick a point *outside* the circle
     mutate(stat = stat(x, y)) %>% 
     pull(stat) %>% 
-    .[[1]] ==
+    .[[1]] == 0,
   # ???, # Write the correct value of stat() here
   msg = "Incorrect value when a point is outside the circle"
 )
@@ -196,9 +203,13 @@ Using your data in `df_q1`, estimate $\pi$.
 
 ```{r q3-task}
 ## TASK: Estimate pi using your data from q1
-df_q3 <- 
+df_q3 <-
   df_q1 %>% 
-  # TODO: Estimate pi as the column `pi_est`
+ # mutate(sum_sq = x^2 + y^2) %>% 
+ # filter(sum_sq <= 1)%>% 
+  #summarise(pi_est = 4 * length(sum_sq)/n)
+  mutate(stat = stat(x,y)) %>% 
+  summarize(pi_est = mean(stat))
 df_q3
 ```
 
@@ -243,6 +254,8 @@ df_q4 <-
           # Estimate pi (pi_est) using the resampled data;
           # this should be *identical* to the
           # code you wrote for q3
+          mutate(stat = stat(x,y)) %>% 
+          summarize(pi_est = mean(stat)) %>%
           pull(pi_est)
       }
     )
@@ -267,12 +280,14 @@ Compute a bootstrap confidence interval for $\pi$ at the 95% confidence level (`
 
 ```{r}
 ## TASK: Compute a bootstrap confidence interval at the 95% level (alpha = 0.05)
+z_c <- qnorm( 1 - (1 - 0.95) / 2 )
+
 df_q5 <- 
   df_q4 %>% 
   summarize(
-    # TODO: Compute pi_lo and pi_up
-    # pi_lo = ?
-    # pi_up = ?
+     sd_p = sd(pi_est),
+     pi_lo = mean(pi_est) - z_c * sd(pi_est) / sqrt(length(pi_est)),
+     pi_hi = mean(pi_est) + z_c * sd(pi_est) / sqrt(length(pi_est))
   )
 
 df_q5
@@ -288,6 +303,14 @@ Compute a CLT-based confidence interval for $\pi$ at the 95% confidence level (`
 
 ```{r q6-task}
 df_q1 %>%
+     mutate(stat = stat(x,y)) %>% 
+     summarize(
+     mean_pi = mean(stat),
+     sd_pi = sd(stat),
+     z_c = qnorm( 1 - (1 - 0.95) / 2 ),
+     pi_lo = mean_pi - z_c * sd_pi / sqrt(length(stat)),
+     pi_hi = mean_pi + z_c * sd_pi / sqrt(length(stat))
+  )
 ```
 
 **Observations**:

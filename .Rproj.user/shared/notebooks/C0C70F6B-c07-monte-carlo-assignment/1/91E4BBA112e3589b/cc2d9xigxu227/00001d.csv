@@ -1,0 +1,8 @@
+"0","## TASK: Choose a sample size and generate samples"
+"0","n <- 100000 # Choose a sample size"
+"0","x <- runif(n, min = 0, max = 1)"
+"0","y <- runif(n, min = 0, max = 1)"
+"0",""
+"0","df_q1 <-"
+"0","  tibble(x,y)"
+"0","df_q1"

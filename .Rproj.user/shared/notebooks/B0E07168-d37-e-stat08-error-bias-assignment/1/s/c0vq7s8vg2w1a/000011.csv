@@ -1,8 +1,0 @@
-"0","## TASK: Compute `epsilon_c`"
-"0","df_q1 <-"
-"0","  df_michelson %>% "
-"0","  mutate(epsilon_c = c_meas - c_true)"
-"0",""
-"0","df_q1 %>%"
-"0","  ggplot(aes(epsilon_c)) +"
-"0","  geom_histogram()"

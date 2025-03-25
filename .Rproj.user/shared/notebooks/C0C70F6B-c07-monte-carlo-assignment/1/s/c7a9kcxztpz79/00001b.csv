@@ -1,0 +1,16 @@
+"0","## TASK: Compute a bootstrap confidence interval at the 95% level (alpha = 0.05)"
+"0","z_c <- qnorm( 1 - (1 - 0.95) / 2 )"
+"0",""
+"0","df_q5 <- "
+"0","  df_q4 %>% "
+"0","  summarize("
+"0","     sd_p = sd(stat),"
+"0","     pi_lo = mean(pi_est) - z_c * sd(pi_est) / sqrt(length(pi_est)),"
+"0","     pi_hi = mean(pi_est) + z_c * sd(pi_est) / sqrt(length(pi_est))"
+"0","  )"
+"1","[1m[33mError[39m in `summarize()`:[22m
+[38;5;232m[36mℹ[38;5;232m In argument: `sd_p = sd(stat)`.[39m
+[1mCaused by error in `as.double()`:[22m
+[33m![39m cannot coerce type 'closure' to vector of type 'double'
+[90mRun `]8;;x-r-run:rlang::last_trace()rlang::last_trace()]8;;` to see where the error occurred.[39m
+"
