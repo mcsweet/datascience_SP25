@@ -1,6 +1,0 @@
-"0","## TASK: Finish implementing this function"
-"0","stat <- function(x, y) {"
-"0","  r <- sqrt(x^2 + y^2)"
-"0","  in_circle <- r <= 1"
-"0","  stat <- 4 * in_circle"
-"0","}"
