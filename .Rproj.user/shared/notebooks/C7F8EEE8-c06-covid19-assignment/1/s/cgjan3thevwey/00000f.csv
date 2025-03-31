@@ -1,0 +1,21 @@
+"0","## NOTE: No need to change this; just execute"
+"0","## Set the filename of the data to download"
+"0","filename_nyt <- ""./data/nyt_counties.csv"""
+"0",""
+"0","## Download the data locally"
+"0","curl::curl_download("
+"0","        url_counties,"
+"0","        destfile = filename_nyt"
+"0","      )"
+"0",""
+"0","## Loads the downloaded csv"
+"0","df_covid <- read_csv(filename_nyt)"
+"2","[1mRows: [22m[34m2502832[39m [1mColumns: [22m[34m6[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m───────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m  (3): county, state, fips
+[32mdbl[39m  (2): cases, deaths
+[34mdate[39m (1): date"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."

@@ -1,0 +1,5 @@
+"0","diamonds %>%"
+"0","  select(carat, cut) %>%"
+"0","  glimpse()"
+"2","Error in select(., carat, cut) : unused arguments (carat, cut)
+"

@@ -1,0 +1,32 @@
+{
+    "id": "EB85AF46",
+    "path": "~/GitHub/datascience_SP25/data-science-curriculum-build/exercises_sequenced/d45-e-data14-webplotdigitizer-assignment.Rmd",
+    "project_path": "data-science-curriculum-build/exercises_sequenced/d45-e-data14-webplotdigitizer-assignment.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": true,
+    "created": 1743106491982.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "rmdVisualMode": "true",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "3508:7643.52001953125",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "0",
+        "cursorPosition": "119,0",
+        "scrollLine": "0",
+        "last_setup_crc32": "d83016ae740d1c70"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1737594217,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1743445116659,
+    "read_only": false,
+    "read_only_alternatives": []
+}

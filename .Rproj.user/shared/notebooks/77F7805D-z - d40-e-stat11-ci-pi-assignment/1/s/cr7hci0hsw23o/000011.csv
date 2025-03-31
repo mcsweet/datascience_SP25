@@ -1,0 +1,8 @@
+"0","## TODO: Devise a test to see if your CI and PI are correctly reflecting"
+"0","##       the diamonds population; use diamonds_validation in your testing"
+"0",""
+"0","bind_cols("
+"0","  df_q2 %>% select(ci_lwr, ci_upr),"
+"0","  diamonds_validate %>% summarize(price_mean = mean(price))"
+"0",") %>% "
+"0","  select(ci_lwr, price_mean, ci_upr)"

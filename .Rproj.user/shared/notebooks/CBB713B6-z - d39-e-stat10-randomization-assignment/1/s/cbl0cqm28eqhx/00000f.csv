@@ -1,0 +1,2 @@
+"0","## Define the sequence of treatment (T) and control (C) plots"
+"0","experimental_design <- c(""T"", ""T"", ""T"", ""C"", ""C"", ""C"")"

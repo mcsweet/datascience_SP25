@@ -1,0 +1,5 @@
+"0","## TODO: Create an improved version of the graph above"
+"0","mpg %>%"
+"0","  ggplot(aes(fct_reorder(manufacturer, cty), cty)) +"
+"0","  geom_boxplot() +"
+"0","  coord_flip()"

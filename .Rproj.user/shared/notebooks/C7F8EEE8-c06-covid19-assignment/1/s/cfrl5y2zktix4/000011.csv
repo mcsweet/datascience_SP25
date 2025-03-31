@@ -1,4 +1,0 @@
-"0","## TASK: Join df_covid and df_q3 by fips."
-"0","df_q4 <- merge(df_covid, df_q3, by = ""fips"")"
-"0",""
-"0","  "

@@ -172,7 +172,10 @@ print("Very good!")
 
 ```{r q4-task}
 ## TASK: Join df_covid and df_q3 by fips.
+
 df_q4 <- merge(df_covid, df_q3, by = "fips")
+
+#df_q4<- left_join(df_covid, df_q3, by = "fips")
 
   
 ```
@@ -192,17 +195,17 @@ if (!any(df_q4 %>% pull(fips) %>% str_detect(., "02105"), na.rm = TRUE)) {
   assertthat::assert_that(FALSE)
 }
 
-# if (any(df_q4 %>% pull(fips) %>% str_detect(., "78010"), na.rm = TRUE)) {
-#   assertthat::assert_that(TRUE)
-# } else {
-#   print(str_c(
-#     "Your df_q4 does not include St. Croix, US Virgin Islands,",
-#     "which is in df_covid. You used the incorrect join type.",
-#     sep = " "
-#   ))
-#   assertthat::assert_that(FALSE)
-# }
-# 
+ if (any(df_q4 %>% pull(fips) %>% str_detect(., "78010"), na.rm = TRUE)) {
+   assertthat::assert_that(TRUE)
+ } else {
+   print(str_c(
+     "Your df_q4 does not include St. Croix, US Virgin Islands,",
+     "which is in df_covid. You used the incorrect join type.",
+     sep = " "
+   ))
+   assertthat::assert_that(FALSE)
+ }
+ 
 
 print("Very good!")
 ```

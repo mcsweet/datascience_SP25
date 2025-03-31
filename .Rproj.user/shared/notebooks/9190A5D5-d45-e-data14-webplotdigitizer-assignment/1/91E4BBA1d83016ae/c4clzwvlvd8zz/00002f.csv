@@ -1,0 +1,7 @@
+"0","## TODO: Load the data you extracted above"
+"0","df_price <- read_csv("
+"0","  "".data/Price.csv"","
+"0","  col_names = c(""date"", ""price_percent"")"
+"0",")"
+"2","Error: '.data/Price.csv' does not exist in current working directory ('C:/Users/mmckonesweet/OneDrive - Olin College of Engineering/Documents/GitHub/datascience_SP25/data-science-curriculum-build/exercises_sequenced').
+"

@@ -1,0 +1,7 @@
+"0","## NOTE: No need to change this"
+"0","assertthat::assert_that(assertthat::are_equal("
+"0","  convert_cp(c(1, 2, 3, 4)),"
+"0","  c(""typical angina"", ""atypical angina"", ""non-anginal pain"", ""asymptomatic"")"
+"0","))"
+"2","Error: convert_cp(c(1, 2, 3, 4)) not equal to c(""typical angina"", ""atypical angina"", ""non-anginal pain"", ""asymptomatic"")
+"
