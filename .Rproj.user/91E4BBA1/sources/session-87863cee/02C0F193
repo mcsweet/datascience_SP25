@@ -1,0 +1,32 @@
+{
+    "id": "02C0F193",
+    "path": "~/GitHub/datascience_SP25/data-science-curriculum-build/challenges/c08-islands-pt1-assignment.Rmd",
+    "project_path": "data-science-curriculum-build/challenges/c08-islands-pt1-assignment.Rmd",
+    "type": "r_markdown",
+    "hash": "3559660388",
+    "contents": "",
+    "dirty": false,
+    "created": 1743445204420.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "0",
+        "cursorPosition": "0,0",
+        "scrollLine": "0",
+        "rmdVisualModeLocation": "87:0",
+        "rmdVisualCollapsedChunks": "",
+        "last_setup_crc32": "87863cee38b2d209"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1743531817,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1743531817609,
+    "read_only": false,
+    "read_only_alternatives": []
+}

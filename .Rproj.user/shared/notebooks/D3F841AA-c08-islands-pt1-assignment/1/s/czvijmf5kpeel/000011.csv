@@ -1,0 +1,6 @@
+"0","# NOTE: No need to edit; run and answer the questions below"
+"0","df_sample_random %>% "
+"0","  mutate(last = str_extract(name, ""\\w+$"")) %>% "
+"0","  count(last) %>% "
+"0","  arrange(desc(n)) %>% "
+"0","  mutate(p = n / sum(n))"

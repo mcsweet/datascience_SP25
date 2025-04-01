@@ -1,0 +1,7 @@
+"0","## NOTE: No need to change this!"
+"0","assertthat::assert_that("
+"0","    (df_q2 %>% pull(se)) > 0.1,"
+"0","    msg = ""Take a closer look at the definition of the standard error. We only divide by sqrt(n) when using the standard deviation of the *population* (not the standard deviation of the *samping distribution*)."""
+"0",")"
+"2","Error: Take a closer look at the definition of the standard error. We only divide by sqrt(n) when using the standard deviation of the *population* (not the standard deviation of the *samping distribution*).
+"

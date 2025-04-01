@@ -1,7 +1,0 @@
-"0","## NOTE: No need to edit; run and inspect"
-"0","as_tibble(mtcars) %>%"
-"0","  mutate(model = rownames(mtcars)) %>%"
-"0",""
-"0","  ggplot(aes(x = """", y = """", size = mpg)) +"
-"0","  geom_point() +"
-"0","  facet_wrap(~model)"

@@ -1,0 +1,30 @@
+"0","# TASK: Complete the code below to compute a bootstrap-based confidence interval"
+"0","df_interval_bootstrap <- "
+"0","  df_sample_random %>% "
+"0","  bootstraps(., times = 1000) %>% "
+"0","  mutate("
+"0","    estimate = map("
+"0","      splits,"
+"0","      function(split_df) {"
+"0","## TODO: Finish this code, using the name_prevalence() helper you implemented"
+"0","## HINT: Remember that you need to use analysis() when operating on split_df"
+"0","        analysis(split_df) %>% "
+"0","        name_prevalence(., last = ""Regan"")"
+"0","      }"
+"0","    )"
+"0","  ) %>% "
+"0","  ## NOTE: No need to edit this line; this uses your bootstrap sample to compute"
+"0","  # a confidence `int`erval using the percentile method"
+"0","  int_pctl(., estimate)"
+"2","Warning: [38;5;232mThere were 16 warnings in `mutate()`.
+The first warning was:[39m
+[38;5;232m[36mℹ[38;5;232m In argument: `estimate = map(...)`.[39m
+Caused by warning:
+[38;5;232m[33m![38;5;232m Returning more (or less) than 1 row per `summarise()` group was deprecated in dplyr 1.1.0.
+[36mℹ[38;5;232m Please use `reframe()` instead.
+[36mℹ[38;5;232m When switching from `summarise()` to `reframe()`, remember that `reframe()` always returns an
+  ungrouped data frame and adjust accordingly.
+[90mCall `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.[38;5;232m[39m
+[38;5;232m[36mℹ[38;5;232m Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 15 remaining warnings.[39m"
+"2","Warning: Recommend at least 1000 non-missing bootstrap resamples for term `Regan`."
+"0","df_interval_bootstrap "
