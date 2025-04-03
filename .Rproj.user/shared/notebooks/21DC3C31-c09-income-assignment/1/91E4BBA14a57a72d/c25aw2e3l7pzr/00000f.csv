@@ -1,0 +1,7 @@
+"0","df_data %>%"
+"0","  ggplot(aes(x = population_estimate, y = income_SE, color = category, group = 1)) +"
+"0","  geom_point(alpha = 0.1) +"
+"0","  theme_minimal() +"
+"0","  scale_y_log10() +"
+"0","  scale_x_log10() +"
+"0","  geom_smooth()"

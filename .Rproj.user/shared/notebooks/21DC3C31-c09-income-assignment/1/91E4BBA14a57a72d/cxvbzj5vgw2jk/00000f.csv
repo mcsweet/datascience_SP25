@@ -1,0 +1,44 @@
+"0","df_q3 <-"
+"0","  df_income %>%"
+"0","  select("
+"0","    Geography,"
+"0","    contains(""Geographic""),"
+"0","    # This will select only the numeric d-person family columns;"
+"0","    # it will ignore the annotation columns"
+"0","    contains(""median"") & matches(""\\d-person families"") & !contains(""Annotation of"")"
+"0","  ) %>%"
+"0","  mutate(across(contains(""median""), as.numeric)) %>%"
+"0","## TODO: Pivot the data, rename the columns"
+"0","  pivot_longer("
+"0","    names_pattern = ""(Estimate|Margin of Error).*(\\d-person families).*"","
+"0","    names_to = c("".value"", ""category""),"
+"0","    cols = matches(""(Estimate|Margin of Error)"")"
+"0","  ) %>%"
+"0","  rename(""income_estimate"" = ""Estimate"", "
+"0","         ""income_moe"" = ""Margin of Error"", "
+"0","         ""geographic_area_name"" = ""Geographic Area Name"") %>%"
+"0","  glimpse()"
+"2","Warning: [38;5;232mThere were 8 warnings in `mutate()`.
+The first warning was:[39m
+[38;5;232m[36mℹ[38;5;232m In argument: `across(contains(""median""),
+  as.numeric)`.[39m
+Caused by warning:
+[33m![39m NAs introduced by coercion
+[38;5;232m[36mℹ[38;5;232m Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the
+  7 remaining warnings.[39m"
+"1","Rows: 16,100"
+"1",""
+"1","
+"
+"1","Columns: 5"
+"1",""
+"1","
+"
+"1","$ Geography            [3m[38;5;246m<chr>[39m[23m ""0500000US01001""…
+$ geographic_area_name [3m[38;5;246m<chr>[39m[23m ""Autauga County,…
+$ category             [3m[38;5;246m<chr>[39m[23m ""2-person famili…
+$ income_estimate      [3m[38;5;246m<dbl>[39m[23m 64947, 80172, 85…
+$ income_moe           [3m[38;5;246m<dbl>[39m[23m 6663, 14181, 106…"
+"1",""
+"1","
+"

@@ -1,0 +1,23 @@
+"0","## TODO: Give the filename for your copy of Table B01003"
+"0","filename_pop <- ""./data/Pop_Data.csv"""
+"0",""
+"0","## NOTE: No need to edit"
+"0","df_pop <-"
+"0","  read_csv("
+"0","    filename_pop,"
+"0","    skip = 1,"
+"0","  ) %>% "
+"0","  rename("
+"0","    population_estimate = `Estimate!!Total`"
+"0","  )"
+"2","New names:"
+"2","[1mRows: [22m[34m3220[39m [1mColumns: [22m[34m5[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m───────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (3): Geography, Geographic Area Name, M...
+[32mdbl[39m (1): Estimate!!Total
+[33mlgl[39m (1): ...5"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"0","df_pop"
