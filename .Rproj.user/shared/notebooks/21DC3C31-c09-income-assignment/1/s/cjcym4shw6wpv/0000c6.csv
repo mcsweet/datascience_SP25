@@ -1,0 +1,8 @@
+"0",""
+"0","graph_e_i %>% "
+"0","  filter(STATE_NAME == ""California"") %>% "
+"0","  ggplot(aes(x = elevation, y = income_SE, color = STATE_NAME, group = 1)) +"
+"0","  geom_point(alpha = 1) +"
+"0","  scale_y_log10() +"
+"0","  #scale_x_log10() +"
+"0","  geom_smooth()"
