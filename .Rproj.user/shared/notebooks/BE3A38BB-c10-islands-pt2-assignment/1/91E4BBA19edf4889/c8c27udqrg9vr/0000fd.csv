@@ -1,0 +1,8 @@
+"0",""
+"0","df_islands %>% "
+"0","  filter(Consent == ""yes"") %>% "
+"0","  filter(Moved_Later == ""no"") %>% "
+"0","  filter(Have_pet == ""pet"") %>% "
+"0","  ggplot(aes(x  = Type_of_Animal, y = Age_First_Friend)) +"
+"0","  geom_boxplot(aes(fill = Type_of_Animal), width = 0.5) +"
+"0","  geom_jitter()"

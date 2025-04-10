@@ -1,0 +1,6 @@
+"0",""
+"0","df_islands %>% "
+"0","  filter(Consent == ""yes"") %>% "
+"0","  arrange(desc(Age)) %>% "
+"0","  ggplot(aes(x  = Age, y = Age_First_Friend, color = Have_pet)) +"
+"0","  geom_jitter()"

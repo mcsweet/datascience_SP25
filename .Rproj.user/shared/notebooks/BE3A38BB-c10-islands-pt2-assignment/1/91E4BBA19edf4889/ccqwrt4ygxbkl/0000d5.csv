@@ -1,0 +1,5 @@
+"0",""
+"0","df_islands %>% "
+"0","  filter(Consent == ""yes"") %>% "
+"0","  ggplot(aes(x = Age)) +"
+"0","  geom_histogram(bins = 20)"

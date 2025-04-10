@@ -1,0 +1,7 @@
+"0",""
+"0","df_islands %>% "
+"0","   filter(Consent == ""yes"") %>% "
+"0","   filter(Have_pet == ""pet"") %>% "
+"0","   filter(Moved_Later == ""no"") %>% "
+"0","   ggplot(aes(x  = Type_of_Animal)) +"
+"0","   geom_bar()"

@@ -1,0 +1,6 @@
+"0",""
+"0","#household size"
+"0","df_islands %>% "
+"0","  filter(Consent == ""yes"") %>% "
+"0","  ggplot(aes(x = Household_Size)) +"
+"0","  geom_bar()"
