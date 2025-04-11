@@ -1,7 +1,0 @@
-"0",""
-"0","#Housenumber vs pet"
-"0","df_islands %>% "
-"0","  filter(Consent == ""yes"") %>% "
-"0","  ggplot(aes(x  = House_Number, y = Type_of_Animal, color = Type_of_Animal)) +"
-"0","  geom_jitter()"
-"0",""
