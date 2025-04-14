@@ -24,7 +24,7 @@ Unlike exercises, **challenges will be graded**. The following rubrics define ho
 <!-- ------------------------- -->
 
 | Category | Needs Improvement | Satisfactory |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | Effort | Some task **q**'s left unattempted | All task **q**'s attempted |
 | Observed | Did not document observations, or observations incorrect | Documented correct observations based on analysis |
 | Supported | Some observations not clearly supported by analysis | All observations clearly supported by analysis (table, graph, etc.) |
@@ -270,7 +270,7 @@ df_q4 %>%
 *Observations*
 
 -   What is a range of plausible values, based on the sampling distribution you've generated?
-    -   3.12-3.775 is the general range of values based on the sampling distirbution
+    -   3.12-3.175 is the general range of values based on the sampling distirbution
 
 ### **q5** Bootstrap percentile confidence interval
 
@@ -280,16 +280,13 @@ Compute a bootstrap confidence interval for $\pi$ at the 95% confidence level (`
 
 ```{r}
 ## TASK: Compute a bootstrap confidence interval at the 95% level (alpha = 0.05)
-z_c <- qnorm( 1 - (1 - 0.95) / 2 )
+alpha <- 0.05
 
 df_q5 <- 
   df_q4 %>% 
   summarize(
-     mean = mean(pi_est),
-     sd = sd(pi_est),
-     se = sd(pi_est)/sqrt(length(pi_est)),
-     pi_lo = mean(pi_est) - z_c * sd(pi_est) / sqrt(length(pi_est)),
-     pi_hi = mean(pi_est) + z_c * sd(pi_est) / sqrt(length(pi_est))
+    mean_lo = quantile(pi_est, alpha / 2),
+    mean_up = quantile(pi_est, 1 - alpha / 2)
   )
 
 df_q5
@@ -305,27 +302,27 @@ Compute a CLT-based confidence interval for $\pi$ at the 95% confidence level (`
 
 ```{r q6-task}
 df_q1 %>%
-     mutate(stat = stat(x,y)) %>% 
-     summarize(
+  mutate(stat = stat(x,y)) %>% 
+    summarize(
      mean_pi = mean(stat),
      sd_pi = sd(stat),
      z_c = qnorm( 1 - (1 - 0.95) / 2 ),
      se_pi = sd_pi/sqrt(length(stat)),
      pi_lo = mean_pi - z_c * sd_pi / sqrt(length(stat)),
      pi_hi = mean_pi + z_c * sd_pi / sqrt(length(stat))
-     ) 
+    ) 
 ```
 
 **Observations**:
 
 -   Does your intervals include the true value of $\pi$?
-    -   Bootstrap CI: No
+    -   Bootstrap CI: Yes
     -   CLT CI: Yes
 -   How closely do your bootstrap CI and CLT CI agree?
-    -   The bootstrap CI in within the CLT CI. The CLT CI has a large range of values as the standard deviation is larger and these are more variables in the dataframe.
+    -   They are very close to each other. They are off by less than 0.001 on either end of the CI
 -   Comment on the width of your CI(s). Would your estimate of $\pi$ be good enough for roughly estimating an area (e.g., to buy enough paint for an art project)? Would your estimate of $\pi$ be good enough for precisely calculating a trajectory (e.g., sending a rocket into orbit)?
     -   It is good enough as a rough estimate. Both CI are close to the actual pi value
-    -   It is not good as a percise estimate. The CLT CI is between 3.132 and 3.164 which if used at a large scale like a rocket in orbit could lead to large variation gaps between reality and calcaultions.
+    -   It is not good as a precise estimate. The CI's are between 3.117 and 3.149 which if used at a large scale like a rocket in orbit could lead to large variation gaps between reality and calculations.
 -   What would be a *valid* way to make your CI more narrow?
     -   A valid way to make CI more narrow would be to increase the number of samples.
 

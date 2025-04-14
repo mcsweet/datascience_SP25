@@ -207,18 +207,18 @@ df_q1
 ```
 
     ## # A tibble: 40,000 × 2
-    ##        x     y
-    ##    <dbl> <dbl>
-    ##  1 0.283 0.340
-    ##  2 0.414 0.227
-    ##  3 0.280 0.160
-    ##  4 0.221 0.775
-    ##  5 0.792 0.507
-    ##  6 0.325 0.577
-    ##  7 0.336 0.337
-    ##  8 0.565 0.308
-    ##  9 0.897 0.890
-    ## 10 0.860 0.506
+    ##         x     y
+    ##     <dbl> <dbl>
+    ##  1 0.142  0.966
+    ##  2 0.124  0.369
+    ##  3 0.544  0.896
+    ##  4 0.596  0.608
+    ##  5 0.150  0.821
+    ##  6 0.812  0.850
+    ##  7 0.433  0.797
+    ##  8 0.0541 0.794
+    ##  9 0.726  0.808
+    ## 10 0.685  0.989
     ## # ℹ 39,990 more rows
 
 Use the following to check that you’ve used the correct variable names.
@@ -428,7 +428,7 @@ df_q4 %>%
 
 - What is a range of plausible values, based on the sampling
   distribution you’ve generated?
-  - 3.12-3.775 is the general range of values based on the sampling
+  - 3.12-3.175 is the general range of values based on the sampling
     distirbution
 
 ### **q5** Bootstrap percentile confidence interval
@@ -441,25 +441,22 @@ level (`alpha = 0.05`).
 
 ``` r
 ## TASK: Compute a bootstrap confidence interval at the 95% level (alpha = 0.05)
-z_c <- qnorm( 1 - (1 - 0.95) / 2 )
+alpha <- 0.05
 
 df_q5 <- 
   df_q4 %>% 
   summarize(
-     mean = mean(pi_est),
-     sd = sd(pi_est),
-     se = sd(pi_est)/sqrt(length(pi_est)),
-     pi_lo = mean(pi_est) - z_c * sd(pi_est) / sqrt(length(pi_est)),
-     pi_hi = mean(pi_est) + z_c * sd(pi_est) / sqrt(length(pi_est))
+    mean_lo = quantile(pi_est, alpha / 2),
+    mean_up = quantile(pi_est, 1 - alpha / 2)
   )
 
 df_q5
 ```
 
-    ## # A tibble: 1 × 5
-    ##    mean      sd       se pi_lo pi_hi
-    ##   <dbl>   <dbl>    <dbl> <dbl> <dbl>
-    ## 1  3.14 0.00849 0.000269  3.14  3.14
+    ## # A tibble: 1 × 2
+    ##   mean_lo mean_up
+    ##     <dbl>   <dbl>
+    ## 1    3.13    3.16
 
 ### **q6** CLT confidence interval
 
@@ -476,31 +473,30 @@ done something *wrong* in one of the tasks….
 
 ``` r
 df_q1 %>%
-     mutate(stat = stat(x,y)) %>% 
-     summarize(
+  mutate(stat = stat(x,y)) %>% 
+    summarize(
      mean_pi = mean(stat),
      sd_pi = sd(stat),
      z_c = qnorm( 1 - (1 - 0.95) / 2 ),
      se_pi = sd_pi/sqrt(length(stat)),
      pi_lo = mean_pi - z_c * sd_pi / sqrt(length(stat)),
      pi_hi = mean_pi + z_c * sd_pi / sqrt(length(stat))
-     ) 
+    ) 
 ```
 
     ## # A tibble: 1 × 6
     ##   mean_pi sd_pi   z_c   se_pi pi_lo pi_hi
     ##     <dbl> <dbl> <dbl>   <dbl> <dbl> <dbl>
-    ## 1    3.14  1.64  1.96 0.00821  3.12  3.16
+    ## 1    3.14  1.64  1.96 0.00821  3.13  3.16
 
 **Observations**:
 
 - Does your intervals include the true value of $\pi$?
-  - Bootstrap CI: No
+  - Bootstrap CI: Yes
   - CLT CI: Yes
 - How closely do your bootstrap CI and CLT CI agree?
-  - The bootstrap CI in within the CLT CI. The CLT CI has a large range
-    of values as the standard deviation is larger and these are more
-    variables in the dataframe.
+  - They are very close to each other. They are off by less than 0.001
+    on either end of the CI
 - Comment on the width of your CI(s). Would your estimate of $\pi$ be
   good enough for roughly estimating an area (e.g., to buy enough paint
   for an art project)? Would your estimate of $\pi$ be good enough for
@@ -508,9 +504,9 @@ df_q1 %>%
   orbit)?
   - It is good enough as a rough estimate. Both CI are close to the
     actual pi value
-  - It is not good as a percise estimate. The CLT CI is between 3.132
-    and 3.164 which if used at a large scale like a rocket in orbit
-    could lead to large variation gaps between reality and calcaultions.
+  - It is not good as a precise estimate. The CI’s are between 3.117 and
+    3.149 which if used at a large scale like a rocket in orbit could
+    lead to large variation gaps between reality and calculations.
 - What would be a *valid* way to make your CI more narrow?
   - A valid way to make CI more narrow would be to increase the number
     of samples.
