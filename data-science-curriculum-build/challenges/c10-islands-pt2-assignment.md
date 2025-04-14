@@ -318,7 +318,7 @@ df_islands %>%
   filter(Have_pet == "pet") %>% 
   ggplot(aes(x  = Type_of_Animal, y = Age_First_Friend)) +
   geom_boxplot(aes(fill = Type_of_Animal), width = 0.5) +
-  geom_jitter()
+  geom_jitter(height = 0)
 ```
 
 ![](c10-islands-pt2-assignment_files/figure-gfm/EDA-6.png)<!-- -->
