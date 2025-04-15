@@ -33,11 +33,11 @@ Caused by warning:
 "1",""
 "1","
 "
-"1","$ Geography            [3m[38;5;246m<chr>[39m[23m ""0500000US01001"", ""0500000US01001"", ""0500000US01001"", ""0500000US01001"", ""0500000US01001"", ""0500000US01003"", …
-$ geographic_area_name [3m[38;5;246m<chr>[39m[23m ""Autauga County, Alabama"", ""Autauga County, Alabama"", ""Autauga County, Alabama"", ""Autauga County, Alabama"", …
-$ category             [3m[38;5;246m<chr>[39m[23m ""2-person families"", ""3-person families"", ""4-person families"", ""5-person families"", ""6-person families"", ""2-…
-$ income_estimate      [3m[38;5;246m<dbl>[39m[23m 64947, 80172, 85455, 88601, 103787, 63975, 79390, 88458, 91259, 69609, 45231, 41250, 49398, 47097, 31319, 44…
-$ income_moe           [3m[38;5;246m<dbl>[39m[23m 6663, 14181, 10692, 20739, 12387, 2297, 8851, 5199, 7011, 23175, 5713, 11047, 9930, 14801, 22847, 3858, 8467…"
+"1","$ Geography            [3m[38;5;246m<chr>[39m[23m ""0500000US01001"", ""0500000US01001"", ""0…
+$ geographic_area_name [3m[38;5;246m<chr>[39m[23m ""Autauga County, Alabama"", ""Autauga Co…
+$ category             [3m[38;5;246m<chr>[39m[23m ""2-person families"", ""3-person familie…
+$ income_estimate      [3m[38;5;246m<dbl>[39m[23m 64947, 80172, 85455, 88601, 103787, 63…
+$ income_moe           [3m[38;5;246m<dbl>[39m[23m 6663, 14181, 10692, 20739, 12387, 2297…"
 "1",""
 "1","
 "

@@ -1,4 +1,4 @@
 "0","## TODO: Join df_q4 and df_pop by the appropriate column"
 "0",""
 "0","df_data <-"
-"0","  left_join(df_pop, df_q4, b = ""Geography"")"
+"0","  left_join(df_q4, df_pop, b = ""Geography"")"

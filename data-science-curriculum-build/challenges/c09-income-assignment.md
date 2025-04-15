@@ -428,7 +428,7 @@ compare population with income.
 ## TODO: Join df_q4 and df_pop by the appropriate column
 
 df_data <-
-  left_join(df_pop, df_q4, b = "Geography")
+  left_join(df_q4, df_pop, b = "Geography")
 ```
 
 # Analysis
@@ -545,7 +545,10 @@ df_data %>%
   studying small vs large counties?
   - It is easier to study large counties because the SE is lower. If you
     want to reduce standard error study large counties. Smaller
-    populations tend to have more variation.
+    populations tend to have more variation. It is important to note
+    that larger population size does not directly mean a larger sample
+    size. If they collect a sample that is proportional to the target
+    population, then sample size should increase with larger population.
 
 # Going Further
 
@@ -651,11 +654,11 @@ elevation in each county? If so, describe that relationship.
 
 **Observations**:
 
-- I firsted looked at all counties in the US vs. elevation. As elevation
-  increases the income estimate does not seem on average increase. The
-  trend line in blue varies slightly but not significantly with
-  elevation change. They do not seem to correlate.
-- I then looked at elevation vs. the variation in income. There seems to
+- I looked at the normalized income estimate vs. elevation for all
+  counties. As elevation increases the income estimate does not seem on
+  average increase. The trend line in blue varies slightly but not
+  significantly with elevation change. They do not seem to correlate.
+- I then looked at the variation vs. elevation in income. There seems to
   be a slightly upward trend between higher elevation and higher
   variation in income.
 - I looked at the same two relationships for only the counties in
