@@ -1,0 +1,6 @@
+"0","counties_NE = c(""Middlesex"",""Fairfield"",""Hartford"",""New Haven"",""Worcester"",""Essex"", ""Suffolk"",""Norfolk"", ""Providence"",""Bristol"",""Plymouth"",""Hampden"",""Hillsborough"",""Rockingham"",""Cumberland"",""New London"",""Barnstable"",""York"",""Litchfield"",""Kent"",""Middlesex"",""Hampshire"",""Chittenden"",""Penobscot"",""Tolland"",""Merrimack"",""Berkshire"",""Washington"",""Strafford"",""Kennebec"",""Windham"",""Androscoggin"",""Grafton"",""Newport"",""Cheshire"",""Franklin"",""Aroostook"",""Belknap"",""Rutland"",""Washington"",""Oxford"",""Windsor"",""Hancock"",""Somerset"",""Bristol"",""Franklin"",""Carroll"",""Windham"",""Sullivan"",""Knox"")"
+"0",""
+"0","df_normalized_NE <-"
+"0","  df_normalized %>% "
+"0","  filter(state %in% c(""Connecticut"", ""Maine"", ""Massachusetts"", ""New Hampshire"", ""Rhode Island"", ""Vermont"")) %>% "
+"0","  filter(county %in% counties_NE)"

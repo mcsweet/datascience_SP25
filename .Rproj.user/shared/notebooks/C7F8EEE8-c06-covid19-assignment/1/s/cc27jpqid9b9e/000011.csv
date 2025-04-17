@@ -1,0 +1,7 @@
+"0","## TASK: Join df_covid and df_q3 by fips."
+"0",""
+"0","#df_q4 <- merge(df_covid, df_q3, by = ""fips"")"
+"0",""
+"0","df_q4<- left_join(df_covid, df_q3, by = ""fips"")"
+"0",""
+"0","  "

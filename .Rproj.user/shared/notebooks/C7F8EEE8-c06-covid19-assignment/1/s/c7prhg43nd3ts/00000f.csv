@@ -1,0 +1,8 @@
+"0","df_normalized_NE %>% "
+"0","  filter(deaths_per100k >= 0) %>% "
+"0","  filter(cases_per100k >= 0) %>% "
+"0","  summarise( "
+"0","    mean_cases_per100k = mean(cases_per100k), "
+"0","    sd_cases_per100k = sd(cases_per100k), "
+"0","    mean_deaths_per100k = mean(deaths_per100k), "
+"0","    sd_deaths_per100k = sd(deaths_per100k) )"

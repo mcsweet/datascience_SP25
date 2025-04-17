@@ -171,7 +171,17 @@ To check your results, this is Table `B01003`.
 ## TASK: Load the census bureau data with the following tibble name.
 ## TASK: Load the census bureau data with the following tibble name.
 filename <- "./data/Pop_Data.csv"
-df_pop <- read_csv(filename, skip = 2, na = "*****", col_types = "ccd_d__", col_names = c("id", "Geographic Area Name", "Estimate!!Total", "Margin of Error!!Total"))
+df_pop <- read_csv(
+  filename, 
+  skip = 2, 
+  na = "*****", 
+  col_types = "ccd_d__", 
+  col_names = c("id",
+                "Geographic Area Name", 
+                "Estimate!!Total",
+                "Margin of Error!!Total"
+                )
+  )
 ```
 
     ## Warning: One or more parsing issues, call `problems()` on your data frame for details,
@@ -282,20 +292,21 @@ the NYT data `df_covid` already contains the `fips`.
 ## TASK: Create a `fips` column by extracting the county code
 df_q3 <-
   df_pop %>% 
-  mutate(fips = str_extract(id, "[^US]*$"))
+  mutate(fips = str_extract(id, pattern = "\\d{5}$")) %>% 
+  select(-id) %>% 
+  select(fips, 'Geographic Area Name', 'Estimate!!Total','Margin of Error!!Total')
 head(df_q3)
 ```
 
-    ## # A tibble: 6 × 5
-    ##   id       `Geographic Area Name` `Estimate!!Total` Margin of Error!!Tot…¹ fips 
-    ##   <chr>    <chr>                              <dbl>                  <dbl> <chr>
-    ## 1 0500000… Autauga County, Alaba…             55200                     NA 01001
-    ## 2 0500000… Baldwin County, Alaba…            208107                     NA 01003
-    ## 3 0500000… Barbour County, Alaba…             25782                     NA 01005
-    ## 4 0500000… Bibb County, Alabama               22527                     NA 01007
-    ## 5 0500000… Blount County, Alabama             57645                     NA 01009
-    ## 6 0500000… Bullock County, Alaba…             10352                     NA 01011
-    ## # ℹ abbreviated name: ¹​`Margin of Error!!Total`
+    ## # A tibble: 6 × 4
+    ##   fips  `Geographic Area Name`  `Estimate!!Total` `Margin of Error!!Total`
+    ##   <chr> <chr>                               <dbl>                    <dbl>
+    ## 1 01001 Autauga County, Alabama             55200                       NA
+    ## 2 01003 Baldwin County, Alabama            208107                       NA
+    ## 3 01005 Barbour County, Alabama             25782                       NA
+    ## 4 01007 Bibb County, Alabama                22527                       NA
+    ## 5 01009 Blount County, Alabama              57645                       NA
+    ## 6 01011 Bullock County, Alabama             10352                       NA
 
 Use the following test to check your answer.
 
@@ -321,7 +332,10 @@ print("Very good!")
 
 ``` r
 ## TASK: Join df_covid and df_q3 by fips.
-df_q4 <- merge(df_covid, df_q3, by = "fips")
+
+#df_q4 <- merge(df_covid, df_q3, by = "fips")
+
+df_q4<- left_join(df_covid, df_q3, by = "fips")
 ```
 
 Use the following test to check your answer.
@@ -343,18 +357,21 @@ if (!any(df_q4 %>% pull(fips) %>% str_detect(., "02105"), na.rm = TRUE)) {
     ## [1] TRUE
 
 ``` r
-# if (any(df_q4 %>% pull(fips) %>% str_detect(., "78010"), na.rm = TRUE)) {
-#   assertthat::assert_that(TRUE)
-# } else {
-#   print(str_c(
-#     "Your df_q4 does not include St. Croix, US Virgin Islands,",
-#     "which is in df_covid. You used the incorrect join type.",
-#     sep = " "
-#   ))
-#   assertthat::assert_that(FALSE)
-# }
-# 
+ if (any(df_q4 %>% pull(fips) %>% str_detect(., "78010"), na.rm = TRUE)) {
+   assertthat::assert_that(TRUE)
+ } else {
+   print(str_c(
+     "Your df_q4 does not include St. Croix, US Virgin Islands,",
+     "which is in df_covid. You used the incorrect join type.",
+     sep = " "
+   ))
+   assertthat::assert_that(FALSE)
+ }
+```
 
+    ## [1] TRUE
+
+``` r
 print("Very good!")
 ```
 
@@ -516,6 +533,7 @@ include in your summaries,* and justify why!
 df_normalized %>% 
   filter(deaths_per100k >= 0) %>% 
   filter(cases_per100k >= 0) %>% 
+  filter(date == '2021-06-27') %>% 
   summarise(
     mean_cases_per100k = mean(cases_per100k),
     sd_cases_per100k = sd(cases_per100k),
@@ -524,12 +542,15 @@ df_normalized %>%
   )
 ```
 
+    ## # A tibble: 1 × 4
     ##   mean_cases_per100k sd_cases_per100k mean_deaths_per100k sd_deaths_per100k
-    ## 1           10093.54         8483.639            174.3095          158.9641
+    ##                <dbl>            <dbl>               <dbl>             <dbl>
+    ## 1             10310.            2980.                205.              112.
 
 - Which rows did you pick?
   - I included any rows that had normalized death and case number that
-    were above or equal to 0
+    were above or equal to 0. I decide to look at the date 2021-06-27 as
+    it was a year into covid and gives me a snapshot in time.
 - Why?
   - I wanted to make sure that the rows included actually had data
     values for finding the mean and sd of them. This eliminated all of
@@ -594,6 +615,60 @@ df_top10_deaths
     ##  9 Robertson                   980.      69344
     ## 10 Martinsville city           946.      13101
 
+``` r
+## TASK: Find the top 10 max cases_per100k counties; report populations as well
+df_top10_cases_2 <-
+  df_normalized %>% 
+  group_by(fips) %>% 
+  filter(date == max(date)) %>% 
+  summarise(across(c(date, cases_per100k, population), max)) %>%
+  arrange(desc(cases_per100k)) %>% 
+  slice(0:10)
+
+## TASK: Find the top 10 deaths_per100k counties; report populations as well
+df_top10_deaths_2 <-
+  df_normalized %>% 
+  group_by(fips) %>% 
+  filter(date == max(date)) %>% 
+  summarise(across(c(date, deaths_per100k, population), max)) %>%
+  arrange(desc(deaths_per100k)) %>% 
+  slice(0:10)
+
+df_top10_cases_2
+```
+
+    ## # A tibble: 10 × 4
+    ##    fips  date       cases_per100k population
+    ##    <chr> <date>             <dbl>      <dbl>
+    ##  1 48301 2022-05-13       192157.        102
+    ##  2 13053 2022-05-13        69527.      10767
+    ##  3 02180 2022-05-13        62922.       9925
+    ##  4 02188 2022-05-13        62542.       7734
+    ##  5 08025 2022-05-13        59449.       5630
+    ##  6 02050 2022-05-13        57439.      18040
+    ##  7 46041 2022-05-13        54317.       5779
+    ##  8 48127 2022-05-13        54019.      10663
+    ##  9 48247 2022-05-13        50133.       5282
+    ## 10 02158 2022-05-13        49817.       8198
+
+``` r
+df_top10_deaths_2
+```
+
+    ## # A tibble: 10 × 4
+    ##    fips  date       deaths_per100k population
+    ##    <chr> <date>              <dbl>      <dbl>
+    ##  1 48311 2022-05-13          1360.        662
+    ##  2 51640 2022-05-13          1175.       6638
+    ##  3 48345 2022-05-13          1125.       1156
+    ##  4 13141 2022-05-13          1054.       8535
+    ##  5 51595 2022-05-13          1022.       5381
+    ##  6 13281 2022-05-13          1016.      11417
+    ##  7 46073 2022-05-13           986.       2029
+    ##  8 48301 2022-05-13           980.        102
+    ##  9 21201 2022-05-13           980.       2143
+    ## 10 51690 2022-05-13           946.      13101
+
 **Observations**:
 
 - For cases and deaths per 100k the top 10 counties are all over the
@@ -601,9 +676,11 @@ df_top10_deaths
 - Loving has more cases than people which could be due to the state
   worker who logged the data inputting the wrong amount or a large
   number of people being treated in the county. The county only has a
-  population of 102 persons.
+  population of 102 persons and the normalized data only looked at for
+  100k population but they had 192156 cases.
+- Only one county is on both top 10 number of cases and deaths per 100k
 - When did these “largest values” occur?
-  - I am not sure what this question is asking?
+  - The largest values occurred on May 13th, 2022
   - This primarily happens in small counties aka populations under
     (12k). It would be interesting to see what the access to medical
     care looks like in these small counties or what else is
@@ -657,8 +734,10 @@ df_normalized_NE %>%
     sd_deaths_per100k = sd(deaths_per100k) )
 ```
 
+    ## # A tibble: 1 × 4
     ##   mean_cases_per100k sd_cases_per100k mean_deaths_per100k sd_deaths_per100k
-    ## 1           6932.908         7003.859            116.1108          102.3012
+    ##                <dbl>            <dbl>               <dbl>             <dbl>
+    ## 1              6933.            7004.                116.              102.
 
 Observation: It is important to note there that the mean cases per 100k
 and mean deaths per 100k in New England is lower than the mean cases and
@@ -896,8 +975,10 @@ df_data_NE %>%
     )
 ```
 
+    ## # A tibble: 1 × 4
     ##   mean_cases sd_cases mean_deaths sd_deathsk
-    ## 1   23094.41 42932.54    484.4827   806.5933
+    ##        <dbl>    <dbl>       <dbl>      <dbl>
+    ## 1     23094.   42933.        484.       807.
 
 ``` r
 #Add in collum for if white_county_names, POC_county_names, or other to the df_data_NE data set

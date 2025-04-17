@@ -1,12 +1,12 @@
 {
-    "id": "7994EC0A",
-    "path": "~/GitHub/datascience_SP25/data-science-curriculum-build/challenges/c09-income-assignment.Rmd",
-    "project_path": "data-science-curriculum-build/challenges/c09-income-assignment.Rmd",
+    "id": "68C6086F",
+    "path": "~/GitHub/datascience_SP25/data-science-curriculum-build/challenges/c06-covid19-assignment.Rmd",
+    "project_path": "data-science-curriculum-build/challenges/c06-covid19-assignment.Rmd",
     "type": "r_markdown",
-    "hash": "3404248574",
+    "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1744741765304.0,
+    "created": 1744915474806.0,
     "source_on_save": false,
     "relative_order": 2,
     "properties": {
@@ -15,18 +15,18 @@
         "rmdVisualMode": "true",
         "rmdVisualWrapConfigured": "true",
         "docOutlineVisible": "1",
-        "cursorPosition": "304,0",
+        "cursorPosition": "349,0",
         "scrollLine": "0",
-        "rmdVisualModeLocation": "13909:12783.2001953125",
+        "rmdVisualModeLocation": "14170:11873.599609375",
         "rmdVisualCollapsedChunks": "",
-        "last_setup_crc32": "22037d27740d1c70"
+        "last_setup_crc32": "dabe66a6652b514f"
     },
     "folds": "",
-    "lastKnownWriteTime": 1744742447,
+    "lastKnownWriteTime": 1744917682,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1744742447089,
+    "last_content_update": 1744917682627,
     "read_only": false,
     "read_only_alternatives": []
 }

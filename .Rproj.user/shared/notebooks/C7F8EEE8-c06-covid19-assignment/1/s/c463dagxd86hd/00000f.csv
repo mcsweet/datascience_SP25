@@ -1,0 +1,2 @@
+"0","## TASK: Find the URL for the NYT covid-19 county-level data"
+"0","url_counties <- ""https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"""
