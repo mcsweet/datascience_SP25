@@ -1,0 +1,16 @@
+"0","## NOTE: No need to edit this chunk"
+"0","## Download PSAAP II data and unzip"
+"0","url_zip <- ""https://ndownloader.figshare.com/files/24111269"""
+"0","filename_zip <- ""./data/psaap.zip"""
+"0","filename_psaap <- ""./data/psaap.csv"""
+"0",""
+"0","curl::curl_download(url_zip, destfile = filename_zip)"
+"0","unzip(filename_zip, exdir = ""./data"")"
+"0","df_psaap <- read_csv(filename_psaap)"
+"2","[1mRows: [22m[34m140[39m [1mColumns: [22m[34m22[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[32mdbl[39m (22): x, idx, L, W, U_0, N_p, k_f, T_f, rho_f, mu_f, lam_f, C_fp, rho_p, d..."
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
