@@ -130,10 +130,13 @@ you still need to count, because your numbers *will* be different!
   - 97%
 - Are there any sources of *real* uncertainty in the percent occupied
   you calculated?
-  - Not that I am aware of
+  - Islanders can move over time between towns and islands. Because of
+    this there is uncertainty in the percent I calculated. If I
+    calculated the percent 2 weeks from now it could be different as one
+    or 5 families could have moved out of or into Helvig
 - Are there any sources of *erroneous* uncertainty in the percent
   occupied you calculated?
-  - No, unless I missed a house in the ones that I counted
+  - Yes as I could.ve missed a house in the ones that I counted
 
 Zach looked at the first 25 homes in Helvig and recorded the `age` and
 `name` of every person in those homes. These people are provided in
@@ -255,6 +258,12 @@ print("Very good!")
   not?
   - I would not know unless I compared the results to another 25 houses
     in Helvig. Then I could see if this follows the trends of the town.
+  - I can conclude that it is most likely not representative of all
+    houses. For example households with kids could live close together
+    or those with similar incomes or professions. This would create a
+    sample Representative of only that area not all the trends that
+    could lead to homes being near to each other.
+  - We could be missing certain groups entirely
 
 In the exercises, we talked about the importance of random sampling. In
 the previous challenge, we were able to *simulate* a random sample by
