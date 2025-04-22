@@ -5,7 +5,7 @@
 "0","## Load the data"
 "0","df_antibiotics <- read_csv(filename)"
 "2","[1mRows: [22m[34m16[39m [1mColumns: [22m[34m5[39m"
-"2","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────────────────────────────────────────[39m
+"2","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────[39m
 [1mDelimiter:[22m "",""
 [31mchr[39m (2): bacteria, gram
 [32mdbl[39m (3): penicillin, streptomycin, neomycin"
@@ -13,3 +13,13 @@
 [36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
 [36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
 "0","df_antibiotics %>% knitr::kable()"
+"2","Registered S3 methods overwritten by 'htmltools':
+  method               from         
+  print.html           tools:rstudio
+  print.shiny.tag      tools:rstudio
+  print.shiny.tag.list tools:rstudio
+"
+"2","Registered S3 method overwritten by 'rmarkdown':
+  method         from
+  print.paged_df     
+"

@@ -228,8 +228,8 @@ your other visuals.
 df_antibiotic_long %>% 
   mutate(bacteria = fct_reorder(bacteria, MIC)) %>%
   group_by(bacteria)%>%
-  ggplot(aes(bacteria, MIC, color = gram)) +
-  geom_boxplot() +
+  ggplot(aes(bacteria, MIC, color = antibiotic)) +
+  geom_point() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   scale_y_log10()
 ```
@@ -251,7 +251,7 @@ df_antibiotic_long %>%
   geom_bar(stat = "identity") + 
   scale_x_continuous(trans = "log") +
   facet_grid(~antibiotic) +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+  theme(axis.text.x = element_text(angle = 90, hjust = 1),legend.position = "none")
 ```
 
 ![](c05-antibiotics-assignment_files/figure-gfm/q1.4-1.png)<!-- -->
