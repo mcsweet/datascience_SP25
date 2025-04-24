@@ -1,0 +1,8 @@
+"0","  "
+"0","df_q5 %>% "
+"0","  filter(!is.na(subject_race)) %>% "
+"0","  group_by(subject_race) %>% "
+"0","  summarise(arrest_rate = mean(arrest_made)) %>%   "
+"0","  ggplot(aes(x = subject_race, y = arrest_rate, fill = subject_race)) +"
+"0","  geom_col() +"
+"0","   theme(legend.position = ""none"")"

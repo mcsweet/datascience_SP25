@@ -1,0 +1,3 @@
+"0","## TODO: Download the data, move to your data folder, and load it"
+"0","filename <- ""./data/yg821jf8611_ma_statewide_2020_04_01.rds"""
+"0","df_data <- readRDS(filename)"
